@@ -23,3 +23,4 @@ y <- sin(z)
 scatterplot3js(x,y,z, color=rainbow(length(z)))
 ```
 
+## [Package rbokeh](http://hafen.github.io/rbokeh/)

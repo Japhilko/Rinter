@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 One of the strenghts of R is the integration of other programming languages and tools via interfaces. This workshop is designed to highlight some of the possibilities.
 
 
-## How to get open data
+## How to get open data - Working with API's
 
 - Wikidata
 - Google Analytics
