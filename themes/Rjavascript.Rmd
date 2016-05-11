@@ -1,0 +1,25 @@
+---
+title: "R and Javascript"
+author: "Jan-Philipp Kolb"
+date: "11 Mai 2016"
+output: 
+  html_document:
+    keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+- [Introducing JS](https://www.opencpu.org/posts/js-release-0-1/)
+
+
+```{r,results='asis'}
+# install.packages("threejs")
+library(threejs)
+z <- seq(-10, 10, 0.01)
+x <- cos(z)
+y <- sin(z)
+scatterplot3js(x,y,z, color=rainbow(length(z)))
+```
+

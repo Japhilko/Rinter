@@ -1,0 +1,18 @@
+---
+title: "R and Python"
+author: "Jan-Philipp Kolb"
+date: "11 Mai 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Package [rPython](http://www.r-bloggers.com/calling-python-from-r-with-rpython/)
+
+```{r}
+# install.packages("rPython")
+```
+
+- [Python from R on Windows OS](http://stackoverflow.com/questions/23185685/how-to-call-python-from-r-in-a-windows-os)

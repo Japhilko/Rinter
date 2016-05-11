@@ -1,30 +1,42 @@
-R Markdown
-----------
+# Readme
+Jan-Philipp Kolb  
+11 Mai 2016  
 
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that
-includes both content as well as the output of any embedded R code
-chunks within the document. You can embed an R code chunk like this:
 
-    summary(cars)
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+## Introduction
 
-Including Plots
----------------
 
-You can also embed plots, for example:
 
-![](Readme_files/figure-markdown_strict/pressure-1.png)<!-- -->
+## How to get open data
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+- Wikidata
+- Google Analytics
+
+## Data Processing of organic data (xpath, XML, json)
+
+## Data Manipulation
+
+## Interactive graphics with Javascript and R
+
+
+
+
+## C++ Integration 
+
+- [Cpp Integration for R](https://github.com/Japhilko/Rinter/blob/master/themes/Rcpp.Rmd)
+
+## Database Integration
+
+## Reproducible Research 
+
+
+
+
+## rPython
+
+- The library [rpy](http://www2.warwick.ac.uk/fac/sci/moac/people/students/peter_cock/r/rpy/)
+
+
+

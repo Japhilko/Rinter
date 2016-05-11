@@ -2,7 +2,9 @@
 title: "Readme"
 author: "Jan-Philipp Kolb"
 date: "11 Mai 2016"
-output: html_document
+output: 
+  html_document:
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE,echo=F}
@@ -12,6 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Introduction
 
+One of the strenghts of R is the integration of other programming languages and tools via interfaces. This workshop is designed to highlight some of the possibilities.
 
 
 ## How to get open data
@@ -24,6 +27,9 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Data Manipulation
 
 ## Interactive graphics with Javascript and R
+
+
+
 
 ## C++ Integration 
 
