@@ -1,0 +1,12 @@
+---
+title: "Cpp Integration for R"
+author: "Jan-Philipp Kolb"
+date: "11 Mai 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## [Rcpp](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-introduction.pdf)

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Cpp Integration for R\"\nauthor: \"Jan-Philipp Kolb\"\ndate: \"11 Mai 2016\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## [Rcpp](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-introduction.pdf)",
+    "created" : 1462947038971.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "246474883",
+    "id" : "CBBC6460",
+    "lastKnownWriteTime" : 1462947066,
+    "last_content_update" : 1462947066779,
+    "path" : "D:/Daten/GitHub/Rinter/themes/Rcpp.Rmd",
+    "project_path" : "themes/Rcpp.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
