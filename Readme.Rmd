@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## C++ Integration 
 
-- [Rcpp]()
+- [Cpp Integration for R](https://github.com/Japhilko/Rinter/blob/master/themes/Rcpp.Rmd)
 
 ## Database Integration
 
