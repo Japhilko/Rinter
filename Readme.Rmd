@@ -5,7 +5,7 @@ date: "11 Mai 2016"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE,echo=F}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -14,17 +14,27 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
-## Interactive graphics with Javascript and R
+## How to get open data
+
+- Wikidata
+- Google Analytics
 
 ## Data Processing of organic data (xpath, XML, json)
 
 ## Data Manipulation
 
+## Interactive graphics with Javascript and R
+
 ## C++ Integration 
+
+- [Rcpp]()
 
 ## Database Integration
 
 ## Reproducible Research 
+
+
+
 
 ## rPython
 

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Readme\"\nauthor: \"Jan-Philipp Kolb\"\ndate: \"11 Mai 2016\"\noutput: html_document\n---\n\n```{r setup, include=FALSE,echo=F}\nknitr::opts_chunk$set(echo = FALSE)\n```\n\n\n## Introduction\n\n\n\n## How to get open data\n\n- Wikidata\n- Google Analytics\n\n## Data Processing of organic data (xpath, XML, json)\n\n## Data Manipulation\n\n## Interactive graphics with Javascript and R\n\n## C++ Integration \n\n- [Rcpp]()\n\n## Database Integration\n\n## Reproducible Research \n\n\n\n\n## rPython\n\n- The library [rpy](http://www2.warwick.ac.uk/fac/sci/moac/people/students/peter_cock/r/rpy/)\n\n\n\n",
+    "created" : 1462946136238.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3959700831",
+    "id" : "342D41E2",
+    "lastKnownWriteTime" : 1462948492,
+    "last_content_update" : 1462948492874,
+    "path" : "D:/Daten/GitHub/Rinter/Readme.Rmd",
+    "project_path" : "Readme.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
