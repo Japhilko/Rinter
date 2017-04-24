@@ -1,4 +1,4 @@
-# Readme
+# Using Interfaces in R
 Jan-Philipp Kolb  
 11 Mai 2016  
 
@@ -7,10 +7,12 @@ Jan-Philipp Kolb
 
 ## Introduction
 
+One of the strenghts of R is the integration of other programming languages and tools via interfaces. This workshop is designed to highlight some of the possibilities.
 
 
-## How to get open data
+## How to get open data - Working with API's
 
+- The package [httr](http://www.r-bloggers.com/using-the-httr-package-to-retrieve-data-from-apis-in-r/)
 - Wikidata
 - Google Analytics
 
