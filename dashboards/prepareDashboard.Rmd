@@ -1,0 +1,25 @@
+---
+title: "Shiny executable"
+author: "Jan-Philipp Kolb"
+date: "8 Juli 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```
+D:/Programme/R-3.3.3/bin/RScript -e hist(runif(1000))
+```
+
+```{r}
+setwd("D:/Eigene Dateien/Dokumente/GitHub/Rinter/dashboards/")
+```
+
+- [Eine Batch Datei schreiben](http://de.wikihow.com/Eine-Batch-Datei-schreiben)
+
+```{r}
+shiny::runApp('Pmanagement/')
+```
+

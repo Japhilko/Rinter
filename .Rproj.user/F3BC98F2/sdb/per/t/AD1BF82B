@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Cpp Integration for R\"\nauthor: \"Jan-Philipp Kolb\"\ndate: \"11 Mai 2016\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## [Rcpp](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-introduction.pdf)\n\n[Tutorial on Rcpp by Hadley Wickham](http://adv-r.had.co.nz/Rcpp.html#rcpp-intro)\n\n```{r}\nlibrary(Rcpp)\n```\n\n```{r}\ncppFunction('int add(int x, int y, int z) {\n  int sum = x + y + z;\n  return sum;\n}')\n```\n\n\n```{r}\nadd(1, 2, 3)\n```\n\n\n\n[Youtube Video with Dirk Edelbuettel](https://www.youtube.com/watch?v=ZKx5duewv-0)\n\n\n",
+    "created" : 1462995392787.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "957275818",
+    "id" : "AD1BF82B",
+    "lastKnownWriteTime" : 1462995986,
+    "last_content_update" : 1462995986469,
+    "path" : "~/GitHub/Rinter/themes/Rcpp.Rmd",
+    "project_path" : "themes/Rcpp.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
