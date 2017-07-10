@@ -1,20 +1,20 @@
 ---
-title: "Old Faithful Eruptions"
+title: "Panel Management - Oflliner"
 output: flexdashboard::flex_dashboard
 runtime: shiny
 ---
 
 ```{r global, include=FALSE}
-# load data in 'global' chunk so it can be shared by all users of the dashboard
+datapath <- "J:/Work/GESISPanel_DATA/01_post_processing/c01/d_2016/df/02_master/data"
+# setwd(datapath)
 library(datasets)
 data(faithful)
 ```
 
-Column {.sidebar}
+Teilnahme {.sidebar}
 -----------------------------------------------------------------------
 
-Waiting time between eruptions and the duration of the eruption for the
-Old Faithful geyser in Yellowstone National Park, Wyoming, USA.
+
 
 ```{r}
 selectInput("n_breaks", label = "Number of bins:",
