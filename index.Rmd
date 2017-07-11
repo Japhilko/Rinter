@@ -8,6 +8,8 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Gliederung
+
 ## Einführung
 
 - [Einführung und Motivation](https://japhilko.github.io/RSocialScience/intro/) 
@@ -49,3 +51,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - [Interaktive Tabellen mit DataTables](https://japhilko.github.io/RSocialScience/DataTables) 
 - [Interaktive Karten mit dem Javascript Paket leaflet](https://japhilko.github.io/RSocialScience/leaflet) 
+
+
+# Einführung und Motivation
+
+```{r child = 'rmd_slides/Intro.Rmd'}
+```
+
