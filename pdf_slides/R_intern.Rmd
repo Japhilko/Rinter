@@ -1,0 +1,56 @@
+---
+title: "R für die Sozialwissenschaften - Teil 1"
+author: "Jan-Philipp Kolb"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  beamer_presentation:
+    colortheme: beaver
+    highlight: pygments
+    theme: CambridgeUS
+    fig_caption: false
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Einführung und Motivation
+
+```{r child = '../intro.Rmd'}
+```
+
+## Erste Schritte mit R
+
+```{r child = '../Funktionen_Basis.Rmd'}
+```
+
+## Wie bekommt man Hilfe
+
+```{r child = '../Hilfe.Rmd'}
+```
+
+## Modularer Aufbau
+
+```{r child = '../R-Pakete.Rmd'}
+```
+
+
+## Datenexport
+
+```{r child = '../Datenexport.Rmd'}
+```
+
+## Datenimport
+
+```{r child = '../Datenimport.Rmd'}
+```
+
+## Datenaufbereitung
+
+```{r child = '../Datenaufbereitung.Rmd'}
+```
+
+## Basisgrafiken
+
+```{r child = '../Basisgrafiken.Rmd'}
+```
