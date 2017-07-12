@@ -259,6 +259,15 @@ Daten$bazq020a[Daten$bazq020a==-99] <- NA
 
 - [Fehlende Werte rekodieren](http://uc-r.github.io/na_recode)
 
+## Mit Strings arbeiten
+
+```{r}
+gsub("l","L","Hallo Welt")
+```
+
+- [Natural Language Processing - Tutorial auf der UseR 2017](https://github.com/statsmaths/useR2017_nlp)
+
+
 ## Weitere Links
 
 - [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) - das Paket `tidyr`

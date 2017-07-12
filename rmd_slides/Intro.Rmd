@@ -28,6 +28,16 @@ knitr::opts_chunk$set(echo = FALSE)
 ![](http://d287f0h5fel5hu.cloudfront.net/blog/wp-content/uploads/2013/06/bar-learn-r-img11.png)
 
 
+## [Ein Hauptgrund - die Community](http://blog.revolutionanalytics.com/2017/06/r-community.html)
+
+
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/RCommunity.PNG)
+
+## Möglichkeiten auf dem neuesten Stand zu sein
+
+- [rweekly](https://rweekly.org/)
+- [r-bloggers](https://www.r-bloggers.com/)
+
 ## [Modularer Aufbau](http://stats.idre.ucla.edu/r/seminars/intro/)
 
 ![](http://revolution-computing.typepad.com/.a/6a010534b1db25970b01bb086253c2970d-500wi)
