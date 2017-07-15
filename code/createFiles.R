@@ -8,6 +8,7 @@
 
 slidepath <- "D:/Daten/GitHub/RSocialScience/slides"
 rmdslidepath <- "D:/Eigene Dateien/Dokumente/GitHub/Rinter/rmd_slides"
+pdfslidespath <- "D:/Eigene Dateien/Dokumente/GitHub/Rinter/pdf_slides"
 wikipath <- "D:/GESIS/Workshops/Rinter.wiki"
 
 setwd(rmdslidepath)
@@ -21,6 +22,15 @@ for ( i in 1:length(chapters)){
                     output_format = "md_document",
                     output_file=paste0(chapters[i],".md"),
                     output_dir=wikipath)
+}
+
+
+
+for ( i in 1:length(chapters)){
+  rmarkdown::render(chapters2[i],
+                    output_format = "beamer_presentation",
+                    output_file=paste0(chapters[i],".pdf"),
+                    output_dir=pdfslidespath)
 }
 
 
