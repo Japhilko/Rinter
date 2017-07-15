@@ -1,0 +1,311 @@
+---
+title: "Lineare Regression"
+author: "Jan-Philipp Kolb"
+date: "20 Juni 2017"
+output: md_document
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=F,message=F,eval=T)
+```
+
+
+## Die lineare Regression
+
+Maindonald - [Data Analysis](https://cran.r-project.org/doc/contrib/usingR.pdf)
+
+-  Einführung in R 
+-  Datenanalyse
+-  Statistische Modelle
+-  Inferenzkonzepte
+-  Regression mit einem Prädiktor
+-  Multiple lineare Regression
+-  Ausweitung des linearen Modells
+-  ...
+
+## Lineare Regression in R - Beispieldatensatz
+
+John H. Maindonald and W. John Braun
+
+DAAG - [Data Analysis and Graphics Data and Functions](http://cran.ms.unimelb.edu.au/web/packages/DAAG/DAAG.pdf)
+
+```{r,eval=F}
+install.packages("DAAG")
+```
+
+
+```{r}
+library("DAAG")
+data(roller)
+```
+
+help on roller data:
+
+```{r,eval=F}
+?roller
+```
+
+## Das lineare Regressionsmodell in R
+
+Schätzen eines Regressionsmodells:
+
+```{r}
+roller.lm <- lm(depression ~ weight, data = roller)
+```
+
+So bekommt man die Schätzwerte:
+
+```{r}
+summary(roller.lm)
+```
+
+Falls das Modell ohne Intercept gesch?tzt werden soll:
+
+```{r}
+lm(depression ~ -1 + weight, data = roller)
+```
+
+
+## Summary des Modells
+
+```{r}
+summary(roller.lm)
+```
+
+## R arbeitet mit Objekten
+
+- `roller.lm` ist nun ein spezielles Regressions-Objekt
+- Auf dieses Objekt können nun verschiedene Funktionen angewendet werden
+
+```{r}
+predict(roller.lm) # Vorhersage
+resid(roller.lm) # Residuen
+```
+
+## Residuenplot
+
+-  Sind Annahmen des linearen Regressionsmodells verletzt? 
+-  Dies ist der Fall, wenn ein Muster abweichend von einer Linie zu erkennen ist.
+-  Hier ist der Datensatz sehr klein
+
+```{r}
+plot(roller.lm,1)
+```
+
+## Residuenplot
+
+- Wenn die Residuen normalverteilt sind sollten sie auf einer Linie liegen.
+
+```{r}
+plot(roller.lm,2)
+```
+
+
+## Regressionsdiagnostik mit Basis-R
+
+Ein einfaches Modell
+```{r}
+N <- 5
+x1 <- rnorm(N)
+y <- runif(N)
+```
+
+
+## Die Dichte der beiden Vektoren
+
+```{r}
+par(mfrow=c(1,2))
+plot(density(x1))
+plot(density(y))
+```
+
+
+
+## Modellvorhersage machen
+
+```{r}
+mod1 <- lm(y~x1)
+pre <- predict(mod1)
+y
+pre
+```
+
+## Regressionsdiagnostik mit Basis-R
+
+```{r}
+plot(x1,y)
+abline(mod1)
+segments(x1, y, x1, pre, col="red")
+```
+
+## Beispieldaten Luftqualität
+
+```{r,eval=F}
+library(datasets)
+?airquality
+```
+
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/DataAirquality.PNG)
+
+## Das `visreg`-Paket 
+
+Ein Modell wird auf dem airquality Datensatz geschätzt
+
+```{r,eval=F}
+install.packages("visreg")
+```
+
+
+```{r}
+library(visreg)
+fit <- lm(Ozone ~ Solar.R + Wind + Temp, data = airquality)
+summary(fit)
+```
+
+## Visualisierung
+
+```{r}
+par(mfrow=c(2,2))
+visreg(fit)
+```
+
+## [Und dann mit `visreg` visualisiert.](http://myweb.uiowa.edu/pbreheny/publications/visreg.pdf)
+
+- Zweites Argument -  Spezifikation erklärende Variable für Visualisierung
+
+```{r}
+visreg(fit, "Wind", type = "contrast")
+```
+
+## Visualisierung mit dem Paket `visreg`
+
+```{r}
+visreg(fit, "Wind", type = "contrast")
+```
+
+
+## Das `visreg`-Paket 
+
+- Das Default-Argument für type ist conditional.
+
+```{r}
+visreg(fit, "Wind", type = "conditional")
+```
+
+
+## Regression mit Faktoren
+
+Mit `visreg` können die Effekte bei Faktoren visualisiert werden.
+
+```{r}
+airquality$Heat <- cut(airquality$Temp, 3, 
+	labels=c("Cool", "Mild", "Hot"))
+fit.heat <- lm(Ozone ~ Solar.R + Wind + Heat, 
+	data = airquality)
+summary(fit.heat)
+```
+
+## Effekte von Faktoren
+
+
+```{r}
+par(mfrow=c(1,2))
+visreg(fit.heat, "Heat", type = "contrast")
+visreg(fit.heat, "Heat", type = "conditional")
+```
+
+
+## Das Paket visreg - Interaktionen
+
+```{r}
+airquality$Heat <- cut(airquality$Temp, 3, 
+labels=c("Cool", "Mild", "Hot"))
+fit <- lm(Ozone ~ Solar.R + Wind * Heat, data = airquality)
+summary(fit)
+```
+
+## Steuern der Graphikausgabe mittels `layout`
+
+```{r}
+visreg(fit, "Wind", by = "Heat",layout=c(3,1))
+```
+
+
+## Das Paket `visreg` - Interaktionen overlay
+
+```{r}
+fit<-lm(Ozone~Solar.R+Wind*Heat,data=airquality)
+visreg(fit,"Wind",by="Heat",overlay=TRUE,partial=FALSE)
+```
+
+## Das Paket `visreg` - `visreg2d`
+
+```{r}
+fit2<-lm(Ozone~Solar.R+Wind*Temp,data=airquality)
+visreg2d(fit2,"Wind","Temp",plot.type="image")
+```
+
+## Das Paket visreg - surface
+
+```{r}
+visreg2d(fit2, "Wind", "Temp", plot.type = "persp")
+```
+
+## Regression mit dem `survey` Paket
+
+```{r}
+library(survey)
+data(api)
+head(apipop)
+```
+
+## [Das Survey Design spezifizieren](https://www.r-bloggers.com/linear-models-with-weighted-observations/)
+
+```{r}
+dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, 
+                  data=apistrat, fpc=~fpc)
+```
+
+### Die Regression rechnen
+
+```{r}
+summary(svyglm(api00~ell+meals+mobility, 
+               design=dstrat))
+```
+
+
+## Linkliste - lineare Regression
+
+-  Regression - [r-bloggers](http://www.r-bloggers.com/r-tutorial-series-simple-linear-regression/)
+
+-  Das Komplette Buch von [Faraway](http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf)- sehr intuitiv geschrieben.
+
+-  Gute Einführung auf [Quick-R](http://www.statmethods.net/stats/regression.html)
+
+- [Multiple Regression](https://www.r-bloggers.com/multiple-regression-part-1/)
+
+- Basis Regression - [How to go about interpreting regression cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
+
+## Aufgabe - lineare Regression
+
+<!--
+[Mietspiegel München](http://data.ub.uni-muenchen.de/2/)
+-->
+
+Beschrieben wird Wegstrecke, dreier Spielzeugautos die in unterschiedlichen Winkeln Rampe herunterfuhren.
+
+- angle: Winkel der Rampe
+- distance: Zurückgelegte Strecke des Spielzeugautos
+- car: Autotyp (1, 2 oder 3)
+
+(a) Lesen Sie den  Datensatz `toycars` (Paket `DAAG`) in einen dataframe `data` ein und  wandeln Sie die Variable `car` des Datensatzes  in  einen Faktor  (`as.factor`) um.
+
+(b) Erstellen  Sie  drei Boxplots,  die die zurückgelegte Strecke  getrennt  nach  dem Faktor car darstellen.
+
+(c) Schätzen Sie für die Autos die Parameter  des folgenden linearen Modells mit  Hilfe der Funktion `lm()`
+
+$$ distance_i= \beta_0 + \beta_1 \cdot angle_i + \epsilon_i$$
+
+(d) Überprüfen  Sie deskriptiv  die Anpassung der drei  Modelle. Deutet das $$ R^2 $$ jeweils auf eine gute Modellanpassung hin?
+
