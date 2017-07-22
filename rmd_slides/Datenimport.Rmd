@@ -46,6 +46,18 @@ R unterstützt von Haus aus schon einige wichtige Formate:
 
 ![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/ImportCSVPNG.PNG)
 
+<!--
+# https://support.spatialkey.com/spatialkey-sample-csv-data/
+# https://datahub.io/dataset/sociallink
+# https://datahub.io/dataset/a35a67a2-52ef-48d7-bba5-acf06a26338d/resource/419b1cbd-9674-40bf-ad62-776b348e0b8e/download/arabicroots.csv
+-->
+
+```{r,eval=F,echo=F}
+library(foreign)
+read.dta("https://github.com/Japhilko/IntroR/blob/master/2017/data/oecd.dta")oecd <- "
+```
+
+
 
 ## Der Arbeitsspeicher
 
@@ -55,7 +67,12 @@ So findet man heraus, in welchem Verzeichnis man sich gerade befindet
 getwd()
 ```
 
-So kann man das Arbeitsverzeichnis ändern:
+Und ändert dann den Pfad mit setwd()
+
+```{r,eval=F}
+setwd("C:/")
+```
+
 
 Man erzeugt ein Objekt in dem man den Pfad abspeichert:
 
@@ -65,11 +82,6 @@ main.path <- "/users/Name/" # Beispiel für Mac
 main.path <- "/home/user/" # Beispiel für Linux
 ```
 
-Und ändert dann den Pfad mit setwd()
-
-```{r,eval=F}
-setwd(main.path)
-```
 
 Bei Windows ist es wichtig Slashs anstelle von Backslashs zu verwenden.
 

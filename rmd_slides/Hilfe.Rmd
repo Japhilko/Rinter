@@ -106,7 +106,9 @@ R-project + Was ich schon immer wissen wollte
 
 ## [Quick R](http://www.statmethods.net/interface/help.html)
 
-- Immer eine Seite mit Beispielen und Hilfe zu einem Thema
+### Quick R
+
+- Eine Seite mit Beispielen und Hilfe zu einem Thema
 - Beispiel: [Quick R - Getting Help](http://www.statmethods.net/interface/help.html)
 
 ### Weitere Links
