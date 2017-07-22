@@ -17,6 +17,32 @@ chapters2 <- dir()
 
 chapters <- gsub(".Rmd","",chapters2) 
 
+reihenF <- NA
+reihenF[chapters=="Intro"] <- 1
+reihenF[chapters=="ersteSchritte"] <- 2
+reihenF[chapters=="Funktionen_Basis"] <- 3
+reihenF[chapters=="Hilfe"] <- 4
+reihenF[chapters=="R-Pakete"] <- 5
+reihenF[chapters=="Datenimport"] <- 6
+reihenF[chapters=="Datenaufbereitung"] <- 7
+reihenF[chapters=="Datenexport"] <- 8
+reihenF[chapters=="Basisgrafiken"] <- 9
+reihenF[chapters=="Datenanalyse"] <- 10
+reihenF[chapters=="Zusammenhang"] <- 11
+reihenF[chapters=="LatticeGraphiken"] <- 12
+reihenF[chapters=="ggplot2"] <- 13
+reihenF[chapters=="lineareRegression"] <- 14
+reihenF[chapters=="logistischeRegression"] <- 15
+reihenF[chapters=="Multilevel"] <- 16
+reihenF[chapters=="R2word"] <- 17
+reihenF[chapters=="R2pdf"] <- 18
+reihenF[chapters=="Notebooks"] <- 19
+reihenF[chapters=="InteraktiveTabellen"] <- 20
+reihenF[chapters=="InteraktiveKarten"] <- 21
+
+
+chapters <- chapters[order(reihenF)]
+
 for ( i in 1:length(chapters)){
   rmarkdown::render(chapters2[i],
                     output_format = "md_document",
