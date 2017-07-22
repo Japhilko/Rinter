@@ -11,10 +11,113 @@ output:
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,cache=T)
+# setwd("D:/Eigene Dateien/Dokumente/GitHub/Rinter/pdf_slides")
 ```
 
 ## Einführung und Motivation
 
 ```{r child = '../rmd_slides/intro.Rmd'}
+```
+
+## Erste Schritte mit R
+
+```{r child = '../rmd_slides/Funktionen_Basis.Rmd'}
+```
+
+## Wie bekommt man Hilfe?
+
+```{r child = '../rmd_slides/Hilfe.Rmd'}
+```
+
+## Modularer Aufbau
+
+```{r child = '../rmd_slides/R-Pakete.Rmd'}
+```
+
+## Datenimport
+
+```{r child = '../rmd_slides/Datenimport.Rmd'}
+```
+
+
+## Datenaufbereitung
+
+```{r child = '../rmd_slides/Datenaufbereitung.Rmd'}
+```
+
+## Datenexport
+
+```{r child = '../rmd_slides/Datenexport.Rmd'}
+```
+
+
+## Basisgrafiken
+
+```{r child = '../rmd_slides/Basisgrafiken.Rmd'}
+```
+
+## Datenanalyse
+
+```{r child = '../rmd_slides/Datenanalyse.Rmd'}
+```
+
+## Grafiken und Zusammenhang
+
+```{r child = '../rmd_slides/Basisgrafiken.Rmd'}
+```
+
+## Das `lattice` Paket
+
+```{r child = '../rmd_slides/LatticeGraphiken.Rmd'}
+```
+
+## `ggplot` und `ggmap`
+
+```{r child = '../rmd_slides/ggplot2.Rmd'}
+```
+
+## Die lineare Regression
+
+```{r child = '../rmd_slides/lineareRegression.Rmd'}
+```
+
+## Die logistische Regression
+
+```{r child = '../rmd_slides/logistischeRegression.Rmd'}
+```
+
+## Mehrebenenmodelle
+
+```{r child = '../rmd_slides/Multilevel.Rmd'}
+```
+
+## Word Dokumente mit R erstellen
+
+```{r child = '../rmd_slides/R2word.Rmd'}
+```
+
+## PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave
+
+```{r child = '../rmd_slides/R2pdf.Rmd'}
+```
+
+## HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown
+
+```{r child = '../rmd_slides/Rmarkdown.Rmd'}
+```
+
+## Notebooks zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia)
+
+```{r child = '../rmd_slides/Notebooks.Rmd'}
+```
+
+## Interaktive Tabellen mit DataTables
+
+```{r child = '../rmd_slides/InteraktiveTabellen.Rmd'}
+```
+
+## Interaktive Karten mit dem Javascript Paket leaflet
+
+```{r child = '../rmd_slides/InteraktiveKarten.Rmd'}
 ```

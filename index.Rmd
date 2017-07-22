@@ -35,10 +35,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - [Die logistische Regression](https://japhilko.github.io/RSocialScience/logreg)   
 - [Mehrebenenmodelle](https://japhilko.github.io/RSocialScience/multilevel/)
 
-## Arbeitsorganisation mit Rstudio und git
-
-- [Allgemein zur Versionsverwaltung](https://japhilko.github.io/RSocialScience/Versionsverwaltung) 
-- [R und Git](https://japhilko.github.io/RSocialScience/rgit) 
 
 ## Präsentation von Daten - Reproducible Research
 

@@ -36,7 +36,12 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Möglichkeiten auf dem neuesten Stand zu sein
 
 - [rweekly](https://rweekly.org/)
+
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/rweekly.PNG)
+
 - [r-bloggers](https://www.r-bloggers.com/)
+
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/Rbloggers.PNG)
 
 ## [Modularer Aufbau](http://stats.idre.ucla.edu/r/seminars/intro/)
 
@@ -71,10 +76,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Die kompletten Foliensätze kann man hier herunterladen:
 
-- Teil 1 - [Von der Einführung bis Graphiken mit `lattice`](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience1.pdf)
-- Teil 2 - [Von den Paketen ggplot2 und ggmap bis zu Mehrebenenmodellen ](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience2.pdf)
-- Teil 3 - [Die Arbeitsorganisation mit Rstudio und Rmarkdown](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience3.pdf)
-- Teil 4 - [Präsentationen, Dashboards, Notebooks und Interaktivität](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience4.pdf)
+<https://github.com/Japhilko/Rinter/blob/master/pdf_slides/R_intern.pdf>
 
 ## Der R-code
 
@@ -82,7 +84,7 @@ Die kompletten Foliensätze kann man hier herunterladen:
 - Begleitend zu den Folien wird meistens auch jeweils ein R-File angeboten. 
 - Der R-code befindet sich in folgendem Ordner:
 
-<https://github.com/Japhilko/RSocialScience/tree/master/code>
+<https://github.com/Japhilko/RInter/tree/master/code>
 
 
 ## Daten herunterladen

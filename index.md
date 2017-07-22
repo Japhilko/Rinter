@@ -36,13 +36,6 @@ Regression mit R
     Regression](https://japhilko.github.io/RSocialScience/logreg)  
 -   [Mehrebenenmodelle](https://japhilko.github.io/RSocialScience/multilevel/)
 
-Arbeitsorganisatuion mit Rstudio und git
-----------------------------------------
-
--   [Allgemein zur
-    Versionsverwaltung](https://japhilko.github.io/RSocialScience/Versionsverwaltung)
--   [R und Git](https://japhilko.github.io/RSocialScience/rgit)
-
 Präsentation von Daten - Reproducible Research
 ----------------------------------------------
 
@@ -88,6 +81,17 @@ Gründe
 
 ![](http://d287f0h5fel5hu.cloudfront.net/blog/wp-content/uploads/2013/06/bar-learn-r-img11.png)
 
+[Ein Hauptgrund - die Community](http://blog.revolutionanalytics.com/2017/06/r-community.html)
+----------------------------------------------------------------------------------------------
+
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/RCommunity.PNG)
+
+Möglichkeiten auf dem neuesten Stand zu sein
+--------------------------------------------
+
+-   [rweekly](https://rweekly.org/)
+-   [r-bloggers](https://www.r-bloggers.com/)
+
 [Modularer Aufbau](http://stats.idre.ucla.edu/r/seminars/intro/)
 ----------------------------------------------------------------
 
@@ -112,9 +116,16 @@ Organisation des Kurses
 Dem Kurs folgen
 ---------------
 
--   <https://japhilko.github.io/RSocialScience/>
+-   <http://japhilko.github.io/Rinter/>
 
-![](https://raw.githubusercontent.com/Japhilko/RSocialScience/master/slides/figure/HP_RSocialscience.PNG)
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/RinterStartPage.PNG)
+
+Das Wiki zum Kurs
+-----------------
+
+-   <https://github.com/Japhilko/Rinter/wiki>
+
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/WikiRinter.PNG)
 
 Komplette Foliensätze
 ---------------------
@@ -125,9 +136,7 @@ Die kompletten Foliensätze kann man hier herunterladen:
     `lattice`](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience1.pdf)
 -   Teil 2 - [Von den Paketen ggplot2 und ggmap bis zu
     Mehrebenenmodellen](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience2.pdf)
--   Teil 3 - [Die Arbeitsorganisation mit Rstudio und
-    Rmarkdown](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience3.pdf)
--   Teil 4 - [Präsentationen, Dashboards, Notebooks und
+-   Teil 3 - [Präsentationen, Dashboards, Notebooks und
     Interaktivität](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience4.pdf)
 
 Der R-code
@@ -138,7 +147,7 @@ Der R-code
     R-File angeboten.
 -   Der R-code befindet sich in folgendem Ordner:
 
-<https://github.com/Japhilko/RSocialScience/tree/master/code>
+<https://github.com/Japhilko/RInter/tree/master/code>
 
 Daten herunterladen
 -------------------
@@ -196,7 +205,7 @@ Aufgabe - Vorbereitung
 
 <!-- -->
 
-    ## [1] "Tue Jul 11 08:01:59 2017"
+    ## [1] "Sat Jul 22 11:46:57 2017"
 
     ## R version 3.3.3 (2017-03-06)
     ## Platform: x86_64-w64-mingw32/x64 (64-bit)
