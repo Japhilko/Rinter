@@ -16,46 +16,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Einführung und Motivation
 
-```{r child = '../intro.Rmd'}
-```
-
-## Erste Schritte mit R
-
-```{r child = '../Funktionen_Basis.Rmd'}
-```
-
-## Wie bekommt man Hilfe
-
-```{r child = '../Hilfe.Rmd'}
-```
-
-## Modularer Aufbau
-
-```{r child = '../R-Pakete.Rmd'}
-```
-
-
-## Datenexport
-
-```{r child = '../Datenexport.Rmd'}
-```
-
-## Datenimport
-
-```{r child = '../Datenimport.Rmd'}
-```
-
-## Datenaufbereitung
-
-```{r child = '../Datenaufbereitung.Rmd'}
-```
-
-## Basisgrafiken
-
-```{r child = '../Basisgrafiken.Rmd'}
-```
-
-## Datenanalyse
-
-```{r child = '../Datenanalyse.Rmd'}
+```{r child = '../rmd_slides/intro.Rmd'}
 ```
