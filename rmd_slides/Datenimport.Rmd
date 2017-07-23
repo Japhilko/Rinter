@@ -2,7 +2,7 @@
 title: "Datenimport"
 author: "Jan-Philipp Kolb"
 date: "12 Juni 2017"
-output: md_document
+output: beamer_presentation
 ---
 
 
@@ -36,29 +36,6 @@ R unterstützt von Haus aus schon einige wichtige Formate:
 ![Import Button](https://i1.wp.com/thepracticalr.files.wordpress.com/2017/01/rstudio-old-import.png?w=456&ssl=1)
 
 
-## CSV aus dem Web einladen
-
-- Datensatz:
-
-<https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD>
-
-- [Datenimport mit Rstudio](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
-
-![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/ImportCSVPNG.PNG)
-
-<!--
-# https://support.spatialkey.com/spatialkey-sample-csv-data/
-# https://datahub.io/dataset/sociallink
-# https://datahub.io/dataset/a35a67a2-52ef-48d7-bba5-acf06a26338d/resource/419b1cbd-9674-40bf-ad62-776b348e0b8e/download/arabicroots.csv
--->
-
-```{r,eval=F,echo=F}
-library(foreign)
-read.dta("https://github.com/Japhilko/IntroR/blob/master/2017/data/oecd.dta")oecd <- "
-```
-
-
-
 ## Der Arbeitsspeicher
 
 So findet man heraus, in welchem Verzeichnis man sich gerade befindet
@@ -89,13 +66,7 @@ Bei Windows ist es wichtig Slashs anstelle von Backslashs zu verwenden.
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/SetWD.png)
 
-## Die Gesis Panel Daten
 
-![](https://www.questback.com/de/assets/images/content/gesis_panel_logo_web.jpg)
-
-- [Gesis Panel Campus File](http://www.gesis.org/gesis-panel/data/gesis-panel-campus-file/)
-
-- [Codebuch für die Gesis Panel Daten im DBK](https://dbk.gesis.org/dbksearch/SDesc2.asp?ll=10&notabs=&af=&nf=&search=gesis%20panel&search2=&db=D&no=5665)
 
 ## Import von Excel-Daten
 
@@ -125,6 +96,29 @@ Dat <- read.csv2("schuldaten_export.csv")
 ```
 
 
+## CSV aus dem Web einladen
+
+- Datensatz:
+
+<https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD>
+
+- [Datenimport mit Rstudio](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
+
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/ImportCSVPNG.PNG)
+
+<!--
+# https://support.spatialkey.com/spatialkey-sample-csv-data/
+# https://datahub.io/dataset/sociallink
+# https://datahub.io/dataset/a35a67a2-52ef-48d7-bba5-acf06a26338d/resource/419b1cbd-9674-40bf-ad62-776b348e0b8e/download/arabicroots.csv
+-->
+
+```{r,eval=F,echo=F}
+library(readstata13)
+oecd <- read_stata("https://github.com/Japhilko/IntroR/blob/master/2017/data/oecd.dta")
+```
+
+
+
 ## Das Paket `readr`
 
 ```{r,eval=F}
@@ -143,6 +137,8 @@ library(readr)
 
 -  `library(readr)` ist für den Import von fremden Datenformaten hilfreich
 -  Wenn Excel-Daten vorliegen - als .csv abspeichern
+
+### Beispiel Weltkulturerbestätten
 
 ```{r}
 url <- "https://raw.githubusercontent.com/Japhilko/
@@ -260,6 +256,14 @@ library(Rcmdr)
 ```
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Rcommander.PNG)
+
+## Die Gesis Panel Daten
+
+![](https://www.questback.com/de/assets/images/content/gesis_panel_logo_web.jpg)
+
+- [Gesis Panel Campus File](http://www.gesis.org/gesis-panel/data/gesis-panel-campus-file/)
+
+- [Codebuch für die Gesis Panel Daten im DBK](https://dbk.gesis.org/dbksearch/SDesc2.asp?ll=10&notabs=&af=&nf=&search=gesis%20panel&search2=&db=D&no=5665)
 
 
 ## Aufgabe
