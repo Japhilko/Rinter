@@ -1,8 +1,8 @@
 ---
 title: "Datenaufbereitung"
 author: "Jan-Philipp Kolb"
-date: "21 Juni 2017"
-output: md_document
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: beamer_presentation
 ---
 
 ```{r, include=FALSE}
@@ -26,15 +26,60 @@ dat<-read.dta("https://github.com/Japhilko/RSocialScience/
               raw/master/data/GPanel.dta")
 ```
 
+## Übersicht mittels Rstudio
+
+![](https://github.com/Japhilko/RSocialScience/raw/master/slides/figure/DatenAnschauen.PNG)
+
+
+
+## [Den Datensatz anschauen](https://support.rstudio.com/hc/en-us/articles/205175388-Using-the-Data-Viewer)
+
+
+### Die Daten filtern
+
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/RstudioFilter.PNG)
+
+
+```{r,echo=F,eval=F}
+# https://github.com/padpadpadpad/dataViewer
+# devtools::install_github('padpadpadpad/dataViewer')
+library(dataViewer)
+
+data("diamonds")
+dataViewer(diamonds, x = 'carat', y = 'price', id_col = 'cut')
+```
+
+## Daten filtern
+
+![](https://support.rstudio.com/hc/en-us/article_attachments/201725237/filters.png)
+
+
+```{r,eval=F,echo=F}
+install.packages("JGR")
+library(JGR)
+```
+
+
+
+## Struktur des Datensatzes
+
+### Der Datentyp
 
 ```{r}
 typeof(dat)
 ```
 
+### [Die Funktion `glimpse` im Paket `dplyr`](https://stats.stackexchange.com/questions/11551/is-there-a-good-browser-viewer-to-see-an-r-dataset-rda-file)
+
+```{r}
+library(dplyr)
+glimpse(dat)
+```
+
 
 ## In Dataframe übertragen
 
-Diese beiden Vektoren zu einem data.frame verbinden:
+Die Vektoren (von `dat`) zu einem data.frame verbinden:
 
 ```{r}
 Daten <- data.frame(dat)
@@ -47,17 +92,19 @@ nrow(Daten) # Zeilen
 ncol(Daten) # Spalten
 ```
 
-## Die Daten anschauen
+## Die Daten in der Console anschauen
 
-- die ersten zeilen anschauen
+### Die ersten Zeilen anschauen
 
 ```{r,eval=F}
 head(Daten)
 ```
 
-- Übersicht mittels Rstudio
+### Die letzten Zeilen anschauen
 
-![](https://github.com/Japhilko/RSocialScience/raw/master/slides/figure/DatenAnschauen.PNG)
+```{r,eval=F}
+tail(Daten)
+```
 
 
 ## Indizieren
@@ -132,10 +179,17 @@ Daten[1:3,]
 
 ## [Variablen Labels](https://stackoverflow.com/questions/2151147/using-stata-variable-labels-in-r)
 
-```{r}
+```{r,echo=F}
 library(foreign)
-dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+dat<-read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
 ```
+
+```{r,eval=F}
+library(foreign)
+dat<-read.dta("https://github.com/Japhilko/RSocialScience
+              /blob/master/data/GPanel.dta?raw=true")
+```
+
 
 ```{r,eval=F}
 attributes(dat)
@@ -147,30 +201,32 @@ attributes(dat)
 var.labels <- attr(dat,"var.labels")
 ```
 
-- Genauso funktioniert es auch mit dem Paket `haven`
+### Genauso funktioniert es auch mit dem Paket `haven`
 
 ```{r,eval=F,echo=T}
 library(haven)
 dat2 <- read_dta(
-"https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+"https://github.com/Japhilko/RSocialScience/
+blob/master/data/GPanel.dta?raw=true")
+
 var.labels2 <- attr(dat,"var.labels")
 ```
 
 ## Die Spaltennamen umbenennen
 
-- Mit `colnames` bekommt man die Spaltennamen angezeigt
+### Mit `colnames` bekommt man die Spaltennamen angezeigt
 
 ```{r}
 colnames(dat)
 ```
 
-- So kann man die Spaltennamen umbenennen:
+### So kann man die Spaltennamen umbenennen:
 
 ```{r}
 colnames(dat) <-var.labels
 ```
 
-- Analog geht das für die Reihennamen
+### Analog geht das für die Reihennamen
 
 ```{r}
 rownames(dat)
@@ -269,6 +325,8 @@ gsub("l","L","Hallo Welt")
 
 
 ## Weitere Links
+
+- [Das `googleVis` Paket für einen besseren Überblick](https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html)
 
 - [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) - das Paket `tidyr`
 

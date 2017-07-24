@@ -2,7 +2,7 @@
 title: "Modularer Aufbau"
 author: "Jan-Philipp Kolb"
 date: "12 Juni 2017"
-output: md_document
+output: beamer_presentation
 ---
 
 ```{r, include=FALSE}
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## [Wo sind die Routinen enthalten](https://stats.idre.ucla.edu/r/seminars/intro/)
 
-```{r,eval=F,echo=F}
+```{r,eval=T,echo=F}
 # http://blog.revolutionanalytics.com/2015/06/how-many-packages-are-there-really-on-cran.html
 CRANmirror <- "http://cran.revolutionanalytics.com"
 cran <- contrib.url(repos = CRANmirror, 
