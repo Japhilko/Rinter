@@ -64,12 +64,6 @@ for ( i in 1:length(chapters)){
 
 
 
-setwd("D:/GESIS/Workshops/RSocialScience/code")
-for ( i in 1:length(chapters)){
-  purl(paste0("../",chapters[i],"/index.Rmd"),documentation=2,
-       output=paste0(chapters[i],".R"))
-}
-
 
 
 
@@ -140,6 +134,13 @@ chapters <- chapters[order(reihenF)]
 # Create R files
 #----------------------------------#
 
+library(knitr)
+codepath <- "D:/Eigene Dateien/Dokumente/GitHub/Rinter/code/"
+setwd(codepath)
+for ( i in 1:length(chapters)){
+  purl(paste0("../rmd_slides/",chapters2[i]),documentation=2,
+       output=paste0(codepath,chapters[i],".R"))
+}
 
 
 #----------------------------------#
