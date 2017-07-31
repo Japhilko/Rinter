@@ -6,10 +6,18 @@
 # Set paths
 #----------------------------------#
 
-slidepath <- "D:/Daten/GitHub/RSocialScience/slides"
-rmdslidepath <- "D:/Eigene Dateien/Dokumente/GitHub/Rinter/rmd_slides"
+slidepath <- "D:/Daten/GitHub/RSocialScience/slides/"
+mainpath <- "D:/Eigene Dateien/Dokumente/GitHub/Rinter/"
+mainpath <- "D:/Daten/GitHub/Rinter/"
+rmdslidepath <- paste0(mainpath, "rmd_slides")
 pdfslidespath <- "D:/Eigene Dateien/Dokumente/GitHub/Rinter/pdf_slides"
 wikipath <- "D:/GESIS/Workshops/Rinter.wiki"
+mdpath <- paste0(mainpath,"md_slides")
+
+#----------------------------------#
+# How many chapters are there
+#----------------------------------#
+
 
 setwd(rmdslidepath)
 
@@ -18,12 +26,25 @@ chapters2 <- dir()
 chapters <- gsub(".Rmd","",chapters2) 
 
 
+## Create the wiki
+
 for ( i in 1:length(chapters)){
   rmarkdown::render(chapters2[i],
                     output_format = "md_document",
                     output_file=paste0(chapters[i],".md"),
                     output_dir=wikipath)
 }
+
+
+## Create md document for linking 
+
+for ( i in 1:length(chapters)){
+  rmarkdown::render(chapters2[i],
+                    output_format = "md_document",
+                    output_file=paste0(chapters[i],".md"),
+                    output_dir=mdpath)
+}
+
 
 
 

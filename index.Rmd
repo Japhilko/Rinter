@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Einführung
 
-- [Einführung und Motivation](https://japhilko.github.io/RSocialScience/intro/) 
+- [Einführung und Motivation]() 
 - [Erste Schritte mit R](https://japhilko.github.io/RSocialScience/ersteSchritte)
 - [Wie bekommt man Hilfe?](https://japhilko.github.io/RSocialScience/hilfe/)
 - [Modularer Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
@@ -48,6 +48,8 @@ knitr::opts_chunk$set(echo = TRUE)
 - [Interaktive Tabellen mit DataTables](https://japhilko.github.io/RSocialScience/DataTables) 
 - [Interaktive Karten mit dem Javascript Paket leaflet](https://japhilko.github.io/RSocialScience/leaflet) 
 
+
+![](figure/Trennlinie.png)
 
 # Einführung und Motivation
 
