@@ -22,14 +22,14 @@ mdpath <- paste0(mainpath,"md_slides")
 setwd(rmdslidepath)
 
 chapters2 <- dir()
-
-chapters <- gsub(".Rmd","",chapters2) 
+chapters2b <- chapters2[agrep(".Rmd",chapters2)]
+chapters <- gsub(".Rmd","",chapters2b) 
 
 
 ## Create the wiki
 
 for ( i in 1:length(chapters)){
-  rmarkdown::render(chapters2[i],
+  rmarkdown::render(chapters2b[i],
                     output_format = "md_document",
                     output_file=paste0(chapters[i],".md"),
                     output_dir=wikipath)
@@ -39,7 +39,7 @@ for ( i in 1:length(chapters)){
 ## Create md document for linking 
 
 for ( i in 1:length(chapters)){
-  rmarkdown::render(chapters2[i],
+  rmarkdown::render(chapters2b[i],
                     output_format = "md_document",
                     output_file=paste0(chapters[i],".md"),
                     output_dir=mdpath)

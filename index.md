@@ -4,57 +4,50 @@ Gliederung
 Einführung
 ----------
 
--   [Einführung und
-    Motivation](https://japhilko.github.io/RSocialScience/intro/)
--   [Erste Schritte mit
-    R](https://japhilko.github.io/RSocialScience/ersteSchritte)
--   [Wie bekommt man
-    Hilfe?](https://japhilko.github.io/RSocialScience/hilfe/)
--   [Modularer
-    Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
--   [Datenimport](https://japhilko.github.io/RSocialScience/import/)
--   [Datenaufbereitung](https://japhilko.github.io/RSocialScience/Datenaufbereitung)
--   [Datenexport](https://japhilko.github.io/RSocialScience/export/)
+-   [Einführung und Motivation](md_slides/Basisgrafiken.md)
+-   [Erste Schritte mit R](md_slides/ersteSchritte.md)
+-   [Wie bekommt man Hilfe?](md_slides/)
+-   [Modularer Aufbau](md_slides/R-Pakete.md)
+-   [Datenimport](md_slides/Datenimport.md)
+-   [Datenaufbereitung](md_slides/Datenaufbereitung.md)
+-   [Datenexport](md_slides/Datenexport.md)
 
 Liebe auf den ersten Plot – Grafiken und Datenanalyse mit R
 -----------------------------------------------------------
 
--   [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics/)
--   [Datenanalyse](https://japhilko.github.io/RSocialScience/Datenanalyse)
--   [Grafiken und
-    Zusammenhang](https://japhilko.github.io/RSocialScience/multidimensional)
--   [Das lattice
-    Paket](https://japhilko.github.io/RSocialScience/lattice)  
--   [ggplot und ggmap](https://japhilko.github.io/RSocialScience/ggplot)
+-   [Basisgrafiken](md_slides/Basisgrafiken.md)
+-   [Datenanalyse](md_slides/Datenanalyse.md)
+-   [Grafiken und Zusammenhang](md_slides/Zusammenhang.md)
+-   [Das lattice Paket](md_slides/LatticeGraphiken.md)  
+-   [ggplot und ggmap](md_slides/ggplot2.md)
 
 Regression mit R
 ----------------
 
--   [Die lineare
-    Regression](https://japhilko.github.io/RSocialScience/linreg)  
--   [Die logistische
-    Regression](https://japhilko.github.io/RSocialScience/logreg)  
--   [Mehrebenenmodelle](https://japhilko.github.io/RSocialScience/multilevel/)
+-   [Die lineare Regression](md_slides/lineareRegression.md)  
+-   [Die logistische Regression](md_slides/logistischeRegression.md) -
+    [Mehrebenenmodelle](md_slides/Multilevel.md)
 
 Präsentation von Daten - Reproducible Research
 ----------------------------------------------
 
--   [Word Dokumente mit R
-    erstellen](https://japhilko.github.io/RSocialScience/r2wd)
+-   [Word Dokumente mit R erstellen](md_slides/R2word.md)
 -   [PDF Dokumente und Präsentationen mit LaTeX, Beamer und
-    Sweave](https://japhilko.github.io/RSocialScience/r2pdf)
+    Sweave](md_slides/R2pdf.md)
 -   [HTML Dokumente, Präsentationen und Dashboards mit
-    Rmarkdown](https://japhilko.github.io/RSocialScience/rmarkdown)
--   [Notebooks](https://japhilko.github.io/RSocialScience/notebooks) zur
-    Integration von anderen Programmiersprachen (Python,LaTeX,Julia)
+    Rmarkdown](md_slides/Rmarkdown.md)
+-   [Notebooks](md_slides/Notebooks.md) zur Integration von anderen
+    Programmiersprachen (Python,LaTeX,Julia)
 
 Interaktive Darstellung mit Javascript und R
 --------------------------------------------
 
 -   [Interaktive Tabellen mit
-    DataTables](https://japhilko.github.io/RSocialScience/DataTables)
+    DataTables](md_slides/InteraktiveTabellen.md)
 -   [Interaktive Karten mit dem Javascript Paket
-    leaflet](https://japhilko.github.io/RSocialScience/leaflet)
+    leaflet](md_slides/InteraktiveKarten.md)
+
+![](figure/Trennlinie.png)
 
 Einführung und Motivation
 =========================
@@ -90,7 +83,12 @@ Möglichkeiten auf dem neuesten Stand zu sein
 --------------------------------------------
 
 -   [rweekly](https://rweekly.org/)
+
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/rweekly.PNG)
+
 -   [r-bloggers](https://www.r-bloggers.com/)
+
+![](https://raw.githubusercontent.com/Japhilko/Rinter/master/figure/Rbloggers.PNG)
 
 [Modularer Aufbau](http://stats.idre.ucla.edu/r/seminars/intro/)
 ----------------------------------------------------------------
@@ -132,12 +130,7 @@ Komplette Foliensätze
 
 Die kompletten Foliensätze kann man hier herunterladen:
 
--   Teil 1 - [Von der Einführung bis Graphiken mit
-    `lattice`](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience1.pdf)
--   Teil 2 - [Von den Paketen ggplot2 und ggmap bis zu
-    Mehrebenenmodellen](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience2.pdf)
--   Teil 3 - [Präsentationen, Dashboards, Notebooks und
-    Interaktivität](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience4.pdf)
+<https://github.com/Japhilko/Rinter/blob/master/pdf_slides/R_intern.pdf>
 
 Der R-code
 ----------
@@ -205,9 +198,9 @@ Aufgabe - Vorbereitung
 
 <!-- -->
 
-    ## [1] "Sat Jul 22 11:46:57 2017"
+    ## [1] "Mon Jul 31 14:43:30 2017"
 
-    ## R version 3.3.3 (2017-03-06)
+    ## R version 3.3.2 (2016-10-31)
     ## Platform: x86_64-w64-mingw32/x64 (64-bit)
     ## Running under: Windows 7 x64 (build 7601) Service Pack 1
     ## 
@@ -220,7 +213,7 @@ Aufgabe - Vorbereitung
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] backports_1.0.5 magrittr_1.5    rprojroot_1.2   tools_3.3.3    
-    ##  [5] htmltools_0.3.6 yaml_2.1.14     Rcpp_0.12.10    stringi_1.1.1  
-    ##  [9] rmarkdown_1.6   knitr_1.15.20   stringr_1.2.0   digest_0.6.12  
+    ##  [1] backports_1.0.4 magrittr_1.5    rprojroot_1.1   tools_3.3.2    
+    ##  [5] htmltools_0.3.5 yaml_2.1.14     Rcpp_0.12.9     stringi_1.1.2  
+    ##  [9] rmarkdown_1.3   knitr_1.15.1    stringr_1.2.0   digest_0.6.11  
     ## [13] evaluate_0.10
