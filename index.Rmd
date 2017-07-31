@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Einführung
 
-- [Einführung und Motivation](md_slides/Basisgrafiken.md) 
+- [Einführung und Motivation](md_slides/Intro.md) 
 - [Erste Schritte mit R](md_slides/ersteSchritte.md)
 - [Wie bekommt man Hilfe?](md_slides/)
 - [Modularer Aufbau](md_slides/R-Pakete.md)
@@ -54,4 +54,77 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r child = 'rmd_slides/Intro.Rmd'}
 ```
+
+```{r child = 'rmd_slides/ersteSchritte.Rmd'}
+```
+
+```{r child = 'rmd_slides/Hilfe.Rmd'}
+```
+
+```{r child = 'rmd_slides/R-Pakete.Rmd'}
+```
+
+```{r child = 'rmd_slides/Datenimport.Rmd'}
+```
+
+```{r child = 'rmd_slides/Datenaufbereitung.Rmd'}
+```
+
+```{r child = 'rmd_slides/Datenexport.Rmd'}
+```
+
+# Liebe auf den ersten Plot – Grafiken und Datenanalyse mit R	
+   
+```{r child = 'rmd_slides/Basisgrafiken.Rmd'}
+```
+   
+```{r child = 'rmd_slides/Datenanalyse.Rmd'}
+```
+   
+```{r child = 'rmd_slides/Zusammenhang.Rmd'}
+```
+
+```{r child = 'rmd_slides/LatticeGraphiken.Rmd'}
+```
+
+<!--
+```{r child = 'rmd_slides/ggplot2.Rmd'}
+```
+-->
+
+# Regression mit R
+
+```{r child = 'rmd_slides/lineareRegression.Rmd'}
+```
+
+```{r child = 'rmd_slides/logistischeRegression.Rmd'}
+```
+
+```{r child = 'rmd_slides/Multilevel.Rmd'}
+```
+
+
+# Präsentation von Daten - Reproducible Research
+
+```{r child = 'rmd_slides/R2word.Rmd'}
+```
+
+```{r child = 'rmd_slides/R2pdf.Rmd'}
+```
+
+```{r child = 'rmd_slides/Rmarkdown.Rmd'}
+```
+
+```{r child = 'rmd_slides/Notebooks.Rmd'}
+```
+
+
+# Interaktive Darstellung mit Javascript und R
+
+```{r child = 'rmd_slides/InteraktiveTabellen.Rmd'}
+```
+
+```{r child = 'rmd_slides/InteraktiveKarten.Rmd'}
+```
+
 
