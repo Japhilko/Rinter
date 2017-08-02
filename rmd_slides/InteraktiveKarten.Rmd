@@ -61,7 +61,11 @@ datatable(whcSitesDat2)
 
 <http://rpubs.com/Japhilko82/WHCdata>
 
+<<<<<<< HEAD
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WHCRpubs.PNG)
+=======
+![](../figure/WHCRpubs.PNG)
+>>>>>>> 8437aa90df5912305d34be727d68e42bcfde9f7e
 
 
 ## Das Paket `magrittr`
@@ -166,6 +170,7 @@ m1 <- leaflet() %>%
 ![gui](http://i1.wp.com/spatialrecology.org/images/r_leaflet/snapshot2.png)
 -->
 
+<<<<<<< HEAD
 ## [Layers ein- und ausblenden](https://rstudio.github.io/leaflet/showhide.html)
 
 
@@ -238,6 +243,8 @@ SpP = SpatialPolygons(list(Srs1, Srs2, Srs3), 1:3)
 leaflet(height = "300px") %>% addPolygons(data = SpP)
 ```
 
+=======
+>>>>>>> 8437aa90df5912305d34be727d68e42bcfde9f7e
 
 ## Beispiel US Staaten
 
@@ -245,7 +252,7 @@ leaflet(height = "300px") %>% addPolygons(data = SpP)
 library(maps)
 mapStates = map("state", fill = TRUE, plot = FALSE)
 leaflet(data = mapStates) %>% addTiles() %>%
-  addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
+  addPolygons(fillColor = topo.colors(10, alpha = NULL))
 ```
 
 ## Der Befehl `setView`
@@ -294,57 +301,6 @@ m %>% addProviderTiles("OpenTopoMap")
 
 ```{r,eval=F}
 m %>% addProviderTiles("Thunderforest.OpenCycleMap")
-```
-
-
-## WMS Tiles hinzufügen
-
-```{r,eval=F}
-leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 4) %>%
-  addWMSTiles(
-    "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi",
-    layers = "nexrad-n0r-900913",
-    options = WMSTileOptions(format = "image/png", transparent = TRUE),
-    attribution = "Weather data © 2012 IEM Nexrad"
-  )
-```
-
-## Mehrere Layer miteinander kombinieren
-
-```{r,eval=F}
-m %>% addProviderTiles("MtbMap") %>%
-  addProviderTiles("Stamen.TonerLines",
-    options = providerTileOptions(opacity = 0.35)) %>%
-  addProviderTiles("Stamen.TonerLabels")
-```
-
-## Andere Marker benutzen
-
-```{r,eval=F}
-greenLeafIcon <- makeIcon(
-  iconUrl = "http://leafletjs.com/examples/custom-icons/leaf-green.png",
-  iconWidth = 38, iconHeight = 95,
-  iconAnchorX = 22, iconAnchorY = 94,
-  shadowUrl = "http://leafletjs.com/examples/custom-icons/leaf-shadow.png",
-  shadowWidth = 50, shadowHeight = 64,
-  shadowAnchorX = 4, shadowAnchorY = 62
-)
-
-leaflet(data = quakes[1:4,]) %>% addTiles() %>%
-  addMarkers(~long, ~lat, icon = greenLeafIcon)
-```
-
-## Andere Icons einfügen
-
-- es lassen sich alle möglichen Icons einfügen
-
-```{r,eval=F}
-menIcon <- makeIcon("https://img.clipartfest.com/707b339dc88f57bbd5d88377891131e3_bean-people-clipart-cliparts-beach-screen-with-people-clipart_344-432.jpeg",
-         iconWidth = 38, iconHeight = 95,
-  iconAnchorX = 22, iconAnchorY = 94)
-
-leaflet(data = quakes[1:4,]) %>% addTiles() %>%
-  addMarkers(~long, ~lat, icon = menIcon)
 ```
 
 

@@ -12,45 +12,119 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Einführung
 
-- [Einführung und Motivation](https://japhilko.github.io/RSocialScience/intro/) 
-- [Erste Schritte mit R](https://japhilko.github.io/RSocialScience/ersteSchritte)
-- [Wie bekommt man Hilfe?](https://japhilko.github.io/RSocialScience/hilfe/)
-- [Modularer Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
-- [Datenimport](https://japhilko.github.io/RSocialScience/import/) 
-- [Datenaufbereitung](https://japhilko.github.io/RSocialScience/Datenaufbereitung)
-- [Datenexport](https://japhilko.github.io/RSocialScience/export/) 
+- [Einführung und Motivation](md_slides/Intro.md) 
+- [Erste Schritte mit R](md_slides/ersteSchritte.md)
+- [Wie bekommt man Hilfe?](md_slides/)
+- [Modularer Aufbau](md_slides/R-Pakete.md)
+- [Datenimport](md_slides/Datenimport.md) 
+- [Datenaufbereitung](md_slides/Datenaufbereitung.md)
+- [Datenexport](md_slides/Datenexport.md) 
 
 ## Liebe auf den ersten Plot – Grafiken und Datenanalyse mit R	
    
-- [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics/) 
-- [Datenanalyse](https://japhilko.github.io/RSocialScience/Datenanalyse)
-- [Grafiken und Zusammenhang](https://japhilko.github.io/RSocialScience/multidimensional)
-- [Das lattice Paket](https://japhilko.github.io/RSocialScience/lattice)   
-- [ggplot und ggmap](https://japhilko.github.io/RSocialScience/ggplot)
+- [Basisgrafiken](md_slides/Basisgrafiken.md) 
+- [Datenanalyse](md_slides/Datenanalyse.md)
+- [Grafiken und Zusammenhang](md_slides/Zusammenhang.md)
+- [Das lattice Paket](md_slides/LatticeGraphiken.md)   
+- [ggplot und ggmap](md_slides/ggplot2.md)
 
 
 ## Regression mit R
 
-- [Die lineare Regression](https://japhilko.github.io/RSocialScience/linreg)   
-- [Die logistische Regression](https://japhilko.github.io/RSocialScience/logreg)   
-- [Mehrebenenmodelle](https://japhilko.github.io/RSocialScience/multilevel/)
+- [Die lineare Regression](md_slides/lineareRegression.md)   
+- [Die logistische Regression](md_slides/logistischeRegression.md)  - [Mehrebenenmodelle](md_slides/Multilevel.md)
 
 
 ## Präsentation von Daten - Reproducible Research
 
-- [Word Dokumente mit R erstellen](https://japhilko.github.io/RSocialScience/r2wd) 
-- [PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave](https://japhilko.github.io/RSocialScience/r2pdf) 
-- [HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown](https://japhilko.github.io/RSocialScience/rmarkdown) 
-- [Notebooks](https://japhilko.github.io/RSocialScience/notebooks) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
+- [Word Dokumente mit R erstellen](md_slides/R2word.md) 
+- [PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave](md_slides/R2pdf.md) 
+- [HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown](md_slides/Rmarkdown.md) 
+- [Notebooks](md_slides/Notebooks.md) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
 
 ## Interaktive Darstellung mit Javascript und R
 
-- [Interaktive Tabellen mit DataTables](https://japhilko.github.io/RSocialScience/DataTables) 
-- [Interaktive Karten mit dem Javascript Paket leaflet](https://japhilko.github.io/RSocialScience/leaflet) 
+- [Interaktive Tabellen mit DataTables](md_slides/InteraktiveTabellen.md) 
+- [Interaktive Karten mit dem Javascript Paket leaflet](md_slides/InteraktiveKarten.md) 
 
+
+![](figure/Trennlinie.png)
 
 # Einführung und Motivation
 
 ```{r child = 'rmd_slides/Intro.Rmd'}
 ```
+
+```{r child = 'rmd_slides/ersteSchritte.Rmd'}
+```
+
+```{r child = 'rmd_slides/Hilfe.Rmd'}
+```
+
+```{r child = 'rmd_slides/R-Pakete.Rmd'}
+```
+
+```{r child = 'rmd_slides/Datenimport.Rmd'}
+```
+
+```{r child = 'rmd_slides/Datenaufbereitung.Rmd'}
+```
+
+```{r child = 'rmd_slides/Datenexport.Rmd'}
+```
+
+# Liebe auf den ersten Plot – Grafiken und Datenanalyse mit R	
+   
+```{r child = 'rmd_slides/Basisgrafiken.Rmd'}
+```
+   
+```{r child = 'rmd_slides/Datenanalyse.Rmd'}
+```
+   
+```{r child = 'rmd_slides/Zusammenhang.Rmd'}
+```
+
+```{r child = 'rmd_slides/LatticeGraphiken.Rmd'}
+```
+
+<!--
+```{r child = 'rmd_slides/ggplot2.Rmd'}
+```
+-->
+
+# Regression mit R
+
+```{r child = 'rmd_slides/lineareRegression.Rmd'}
+```
+
+```{r child = 'rmd_slides/logistischeRegression.Rmd'}
+```
+
+```{r child = 'rmd_slides/Multilevel.Rmd'}
+```
+
+
+# Präsentation von Daten - Reproducible Research
+
+```{r child = 'rmd_slides/R2word.Rmd'}
+```
+
+```{r child = 'rmd_slides/R2pdf.Rmd'}
+```
+
+```{r child = 'rmd_slides/Rmarkdown.Rmd'}
+```
+
+```{r child = 'rmd_slides/Notebooks.Rmd'}
+```
+
+
+# Interaktive Darstellung mit Javascript und R
+
+```{r child = 'rmd_slides/InteraktiveTabellen.Rmd'}
+```
+
+```{r child = 'rmd_slides/InteraktiveKarten.Rmd'}
+```
+
 
