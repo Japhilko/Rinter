@@ -132,7 +132,7 @@ aggregate(dat$bazq020a,by=list(dat$a11d054a),mean,na.rm=T)
 ## Beispieldatensatz - apply Funktion
 
 ```{r}
-ApplyDat <- cbind(1:4,runif(4),rnorm(4))
+ApplyDat <- array(1:8,c(4,2))
 ```
 
 ```{r,echo=F}
@@ -183,15 +183,32 @@ apply(ApplyDat,1,length)
 - Auch andere Funktionen können eingesetzt werden.... - Auch selbst programmierte Funktionen
 - Im Beispiel wird die einfachste eigene Funktion angewendet.
 
-## Beispiel Funktion tapply
+## Beispieldaten Funktion `tapply`
 
 
 ```{r}
-tapply(dat$a11d054a,dat$a11d056z,mean)
-
-tapply(dat$a11d054a,
-       dat$a11d056z,function(x)x)
+tapdat <- cbind(SEX=sample(c("m","w"),10,replace=T),INC=rnorm(10))
 ```
+
+```{r,echo=F}
+library(knitr)
+kable(head(tapdat))
+```
+
+## Beispiel Funktion tapply
+
+```{r}
+tapply(tapdat$INC,tapdat$SEX,mean)
+```
+
+## Aufgabe - apply Funktion anwenden
+
+- Erstellen Sie eine Matrix A mit 4 Zeilen und 25 Spalten, die die Werte 1 bis 100 enthält. Analog dazu erstellen Sie eine Matrix B mit 25 Zeilen und 4 Spalten, die die Werte 1 bis 100 enthält.
+
+- Berechnen Sie mittels dem apply()-Befehl den Mittelwert und die Varianz für jede Zeile von A bzw. B.
+
+- Berechnen Sie mittels dem apply()-Befehl den Mittelwert und die Varianz für jede Spalte von A bzw. B.
+
 
 ## Links Datenanalyse
 
