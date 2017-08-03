@@ -6,14 +6,14 @@ output: beamer_presentation
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,eval=T)
+knitr::opts_chunk$set(echo = TRUE,eval=T,warning=F,message=F)
 ```
 
 
 
 ## Data Frames
 
-Beispieldaten einlesen:
+### Beispieldaten einlesen:
 
 ```{r,echo=F}
 library(foreign)
@@ -25,6 +25,9 @@ library(foreign)
 dat<-read.dta("https://github.com/Japhilko/RSocialScience/
               raw/master/data/GPanel.dta")
 ```
+
+- Auf dem Github Verzeichnis liegt eine verkleinerte Version des Campus Files. 
+- Alle Operationen sollten aber auch mit dem größeren Datensatz funktionieren
 
 ## Übersicht mittels Rstudio
 

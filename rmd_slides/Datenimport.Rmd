@@ -207,6 +207,7 @@ oecd <- read_dta("https://github.com/Japhilko/IntroR/
 
 ## Das Paket `readstata13`
 
+### *Import 'Stata' Data Files*
 
 ```{r,eval=F}
 # install.packages("readstata13")
@@ -287,13 +288,18 @@ setwd("D:/Daten/GitHub/Rinter/data")
 save(varlabs,file="GP_varlabs.RData")
 ```
 
+```{r,echo=F}
+load("../data/GP_varlabs.RData")
+head(as.character(varlabs[,2]),n=20)
+```
+
 
 ## Gesis Panel - Variablen Labels
 
 ```{r,echo=F}
 library(knitr)
 load("../data/GP_varlabs.RData")
-kable(head(varlabs))
+kable(head(varlabs),n=10)
 ```
 
 
