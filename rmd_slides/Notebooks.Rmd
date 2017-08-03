@@ -70,6 +70,10 @@ jupyter notebook
 ```
 ## Start Jupyter Notebook
 
+### Jupyter Notebook im Intranet
+
+<http://intranet.gesis.intra/AGs/iedi/Seiten/Jupyter.aspx>
+
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/JupyterEx.PNG)
 
 ## Beispiel Eingabe Code

@@ -305,7 +305,20 @@ gpanel1 <- as_tibble(dat)
 gpanel1
 ```
 
-## Schleifen
+## [In R verfügbare Schleifen](https://www.datacamp.com/community/tutorials/tutorial-on-loops-in-r#gs.e=BY75k)
+
+![](http://community.datacamp.com.s3.amazonaws.com/community/production/ckeditor_assets/pictures/132/content_flowchart1.png)
+
+
+## Beispiele für [Schleifen](https://www.r-bloggers.com/how-to-write-the-first-for-loop-in-r/)
+
+```{r,eval=F}
+for (year in c(2010,2011,2012,2013,2014,2015)){
+  print(paste("The year is", year))
+}
+```
+
+
 
 ```{r}
 erg <- vector()
