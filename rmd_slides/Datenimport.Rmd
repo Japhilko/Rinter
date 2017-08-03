@@ -266,6 +266,37 @@ library(Rcmdr)
 - [Codebuch für die Gesis Panel Daten im DBK](https://dbk.gesis.org/dbksearch/SDesc2.asp?ll=10&notabs=&af=&nf=&search=gesis%20panel&search2=&db=D&no=5665)
 
 
+## Gesis Panel Daten einlesen
+
+```{r,echo=F,eval=F}
+pufpath <- "J:/Work/GESISPanel_DATA/01_post_processing/campus_file/b_2014"
+pufpath2 <- "J:/Work/Statistik/Kolb/Workshops/2017/Rintern/data"
+setwd(pufpath2)
+```
+
+```{r,eval=F}
+library(readstata13)
+dat <- read.dta13("ZA5666_v1-0-0_Stata14.dta")
+attdat <- attributes(dat)
+varlabs <- data.frame(colnames(dat),attdat$var.labels)
+attdat$var.labels
+```
+
+```{r,echo=F,eval=F}
+setwd("D:/Daten/GitHub/Rinter/data")
+save(varlabs,file="GP_varlabs.RData")
+```
+
+
+## Gesis Panel - Variablen Labels
+
+```{r,echo=F}
+library(knitr)
+load("../data/GP_varlabs.RData")
+kable(head(varlabs))
+```
+
+
 ## Aufgabe
 
 - Gehen Sie auf meine Github Seite
