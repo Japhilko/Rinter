@@ -6,8 +6,9 @@ output: md_document
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,warning=F,message=F)
 ```
+
 
 ## Den Datensatz laden
 
@@ -23,6 +24,8 @@ library(foreign)
 dat <- read.dta(
 "https://github.com/Japhilko/RSocialScience/blob/master/data/
 GPanel.dta?raw=true")
+
+# Daten in numerische Werte umgewandelt
 dat$bazq020a <- as.numeric(dat$bazq020a)
 ```
 
@@ -187,7 +190,8 @@ apply(ApplyDat,1,length)
 
 
 ```{r}
-tapdat <- data.frame(SEX=sample(c("m","w"),10,replace=T),INC=rnorm(10))
+tapdat <- data.frame(SEX=sample(c("m","w"),10,replace=T),
+                     INC=runif(n=10,min=1000,max=5000))
 ```
 
 ```{r,echo=F}
@@ -212,8 +216,8 @@ tapply(tapdat$INC,tapdat$SEX,mean)
 
 ## Links Datenanalyse
 
-- Die Benutzung von `apply`, `tapply`, etc. (Artikel bei [R-bloggers](http://www.r-bloggers.com/using-apply-sapply-lapply-in-r/)) 
-
 - [Quick-R zu deskriptiver Statistik](http://www.statmethods.net/stats/descriptives.html)
 
 - [Quick-R zur Funktion `aggregate`](http://www.statmethods.net/management/aggregate.html)
+
+- Die Benutzung von `apply`, `tapply`, etc. (Artikel bei [R-bloggers](http://www.r-bloggers.com/using-apply-sapply-lapply-in-r/)) 

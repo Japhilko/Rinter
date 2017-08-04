@@ -10,8 +10,6 @@ knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
 ```
 
-
-
 ## Präsentationen mit Rmarkdown - beamer Präsentationen
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/beamerexample.PNG)

@@ -9,6 +9,7 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 ## Ein Markdown Dokument mit Rstudio erzeugen
 
 ![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/r2wordstart.png)

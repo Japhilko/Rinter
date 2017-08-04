@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = T)
 ```
 
 
-
 ## [Präsentationen - Rpres der einfachste Weg](https://rstudio-pubs-static.s3.amazonaws.com/27777_55697c3a476640caa0ad2099fe914ae5.html#/)
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Rpresentations.PNG)

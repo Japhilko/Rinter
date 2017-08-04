@@ -9,8 +9,6 @@ output: beamer_presentation
 knitr::opts_chunk$set(echo = TRUE,eval=T,warning=F,message=F)
 ```
 
-
-
 ## Data Frames
 
 ### Beispieldaten einlesen:
@@ -329,6 +327,29 @@ for (i in 1:ncol(dat)){
   erg[i] <- mean(runif(100))
 }
 ```
+
+
+## [Beispiele für Funktionen](http://r4ds.had.co.nz/functions.html)
+
+### Beispiel fehlende Werte
+
+```{r}
+a <- c(1,2,45,NA)
+mean(a)
+```
+
+### Eine Funktion, die auch bei NA's Wert ausgibt:
+```{r}
+namean <- function(x) {
+  rng <- mean(x, na.rm = TRUE)
+}
+```
+
+```{r}
+namean(a)
+```
+
+
 
 ## [Fehlende Werte ausschließen](http://faculty.nps.edu/sebuttre/home/R/missings.html)
 

@@ -9,6 +9,7 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 ## Wie sehen die Daten aus?
 
 - Beispiel Mehrebenenstruktur der Daten

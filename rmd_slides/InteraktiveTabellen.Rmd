@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE,warning=F,message = F)
 internet =F
 ```
 
+
 ## The R-package DT
 
 - [DT: An R interface to the DataTables library](https://rstudio.github.io/DT/)

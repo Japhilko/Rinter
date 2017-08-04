@@ -9,6 +9,7 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE,eval=T)
 ```
 
+
 ## Die Exportformate von R
 
 -  In R werden offene Dateiformate bevorzugt
@@ -125,3 +126,29 @@ convert("data/mtcars.dta", "data/mtcars.sav")
 
 - [Daten aus R heraus bekommen](https://www.stat.ubc.ca/~jenny/STAT545A/block05_getNumbersOut.html)
 
+
+## Aufgabe - OECD Datensatz
+
+- Laden Sie den [oecd-Datensatz](https://raw.githubusercontent.com/Japhilko/IntroR/master/2015/data/oecd.csv) mit folgender Funktion:
+
+<https://raw.githubusercontent.com/Japhilko/IntroR/master/2015/data/oecd.csv>
+
+```{r,eval=F}
+link <- "https://raw.githubusercontent.com/Japhilko/IntroR/master/2015/data/oecd.csv"
+data <- read.csv(link)
+```
+
+- Überprüfen Sie die Dimensioenn der OECD-Daten.
+
+- Berechnen Sie die Mittelwerte und Varianzen der einzelnen
+Variablen mit einem geeigneten apply Befehl.
+
+- In welchem Land waren die meisten Jugendlichen mindestens
+zweimal betrunken (Spalte Alkohol)? Wie hoch ist der maximale Prozentsatz?
+
+- In welchem Land ist die Sterblichkeit am geringsten? Wie
+hoch ist sie?
+
+- Erstellen Sie einen neuen Datensatz, der aufsteigend nach
+dem Einkommen geordnet ist. Speichern Sie diesen in einer
+neuen .csv Datei

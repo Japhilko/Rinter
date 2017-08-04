@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+
 ## Pluspunkte von R
 
 - Als Weg kreativ zu sein ...

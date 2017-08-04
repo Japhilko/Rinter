@@ -1,0 +1,13 @@
+\frametitle{\href {https://rstudio.github.io/leaflet/shapes.html}{Ein Rechteck hinzufügen}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{leaflet}\NormalTok{() %>%}\StringTok{ }\KeywordTok{addTiles}\NormalTok{() %>%}
+\StringTok{  }\KeywordTok{addRectangles}\NormalTok{(}
+    \DataTypeTok{lng1=}\NormalTok{-}\FloatTok{118.456554}\NormalTok{, }\DataTypeTok{lat1=}\FloatTok{34.078039}\NormalTok{,}
+    \DataTypeTok{lng2=}\NormalTok{-}\FloatTok{118.436383}\NormalTok{, }\DataTypeTok{lat2=}\FloatTok{34.062717}\NormalTok{,}
+    \DataTypeTok{fillColor =} \StringTok{"transparent"}
+  \NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
