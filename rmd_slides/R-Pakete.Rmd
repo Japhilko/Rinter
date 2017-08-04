@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## [Wo sind die Routinen enthalten](https://stats.idre.ucla.edu/r/seminars/intro/)
+## [Wo sind die Funktionen enthalten](https://stats.idre.ucla.edu/r/seminars/intro/)
 
 ```{r,eval=T,echo=F}
 # http://blog.revolutionanalytics.com/2015/06/how-many-packages-are-there-really-on-cran.html
@@ -18,7 +18,7 @@ CRANmirror <- "http://cran.revolutionanalytics.com"
 cran <- contrib.url(repos = CRANmirror, 
                       type = "source")
 info <- available.packages(contriburl = cran, type = "source")
-nrow(info)
+# nrow(info)
 ```
 
 
@@ -118,6 +118,7 @@ install_github("hadley/ggplot2")
 - Zur Zeit gibt es 35 [Task Views](https://cran.r-project.org/web/views/)
 - [Alle Pakete eines Task Views können mit folgendem Befehl installiert werden:](https://mran.microsoft.com/rpackages/)
 
+### Pakete von CRAN Task View installieren
 ```{r,eval=F}
 install.packages("ctv")
 library("ctv")

@@ -121,6 +121,10 @@ oecd <- read_stata("https://github.com/Japhilko/IntroR/blob/master/2017/data/oec
 
 ## Das Paket `readr`
 
+
+### Das Paket [`readr` (Rstudio Blogg)](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
+
+
 ```{r,eval=F}
 install.packages("readr")
 ```
@@ -128,9 +132,6 @@ install.packages("readr")
 ```{r}
 library(readr)
 ```
-
-- [`readr` auf dem Rstudio Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
-
 
 
 ## Import von Excel-Daten
