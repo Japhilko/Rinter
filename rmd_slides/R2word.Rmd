@@ -160,7 +160,7 @@ kable(ab)
 
 ## [Vorlagen verwenden](http://rmarkdown.rstudio.com/articles_docx.html)
 
-- Formatvorlagen können verändert werden
+### Formatvorlagen können verändert werden
 
 1. Ein Word Dokument mit Rmarkdown erstellen
 2. Das Dokument in Word öffnen und Format verändern 
