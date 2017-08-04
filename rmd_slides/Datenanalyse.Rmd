@@ -203,6 +203,9 @@ kable(head(tapdat))
 
 ```{r}
 tapply(tapdat$INC,tapdat$SEX,mean)
+
+# Eine einfache selbst programmierte Funktion
+tapply(tapdat$INC,tapdat$SEX,function(x)x)
 ```
 
 ## Aufgabe - apply Funktion anwenden

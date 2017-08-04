@@ -285,6 +285,9 @@ pie(1:10, col=1:10)
 dev.off() 
 ```
 
+```{r,echo=F}
+pie(1:10, col=1:10)
+```
 
 
 ## Aufgabe - einfache Grafiken

@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,cache=T)
+knitr::opts_chunk$set(echo = TRUE,cache=T,warning=F,message=F)
 # setwd("D:/Eigene Dateien/Dokumente/GitHub/Rinter/pdf_slides")
 ```
 
