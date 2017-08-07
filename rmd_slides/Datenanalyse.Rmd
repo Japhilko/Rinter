@@ -190,12 +190,8 @@ apply(ApplyDat,1,length)
 
 
 ```{r}
-<<<<<<< HEAD
-tapdat <- data.frame(SEX=sample(c("m","w"),10,replace=T),INC=rnorm(10))
-=======
 tapdat <- data.frame(SEX=sample(c("m","w"),10,replace=T),
                      INC=runif(n=10,min=1000,max=5000))
->>>>>>> 9270df95489ff0fc5bc52127723f2e622f5a9257
 ```
 
 ```{r,echo=F}
