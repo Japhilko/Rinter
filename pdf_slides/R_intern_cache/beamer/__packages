@@ -32,3 +32,8 @@ sjPlot
 magrittr
 leaflet
 sp
+psych
+zoo
+lmtest
+sandwich
+AER

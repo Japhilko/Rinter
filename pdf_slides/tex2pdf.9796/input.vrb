@@ -1,0 +1,526 @@
+\frametitle{Interaktive Karten mit dem Javascript Paket leaflet}
+
+\begin{block}{Die Daten - Weltkulturerbe}
+
+\begin{itemize}
+\tightlist
+\item
+  die Daten einlesen:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{url <-}\StringTok{ "https://raw.githubusercontent.com/Japhilko/}
+\StringTok{GeoData/master/2015/data/whcSites.csv"}
+
+\NormalTok{whcSites <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(url) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  die Daten werden eingeschränkt:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{whcSitesDat <-}\StringTok{ }\KeywordTok{with}\NormalTok{(whcSites,}\KeywordTok{data.frame}\NormalTok{(name_en,}
+                                        \NormalTok{category))}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{Eine Tabelle erzeugen mit \texttt{knitr}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(knitr)}
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{head}\NormalTok{(whcSitesDat))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+name\_en & category\tabularnewline
+\midrule
+\endhead
+Cultural Landscape and Archaeological Remains of the Bamiyan Valley &
+Cultural\tabularnewline
+Minaret and Archaeological Remains of Jam & Cultural\tabularnewline
+Historic Centres of Berat and Gjirokastra & Cultural\tabularnewline
+Butrint & Cultural\tabularnewline
+Al Qal'a of Beni Hammad & Cultural\tabularnewline
+M'Zab Valley & Cultural\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{block}
+
+\begin{block}{Eine erste interaktive Tabelle -
+\href{https://rstudio.github.io/DT/}{Das Paket \texttt{DT}}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"DT"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{./tex2pdf.9796/7752297de29c10259795463db8e6056992088da7.png}
+
+\end{block}
+
+\begin{block}{Weitere Variablen WHC Datensatz}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{whcSitesDat2 <-}\StringTok{ }\KeywordTok{with}\NormalTok{(whcSites,}\KeywordTok{data.frame}\NormalTok{(name_en,category,}
+                                         \NormalTok{longitude,latitude,date_inscribed,area_hectares,danger_list))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  mit dem Befehl \texttt{datatable} kann man eine erste interaktive
+  Tabelle erstellen:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{'DT'}\NormalTok{)}
+\KeywordTok{datatable}\NormalTok{(whcSitesDat2)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{Das Ergebnis bei Rpubs}
+
+\url{http://rpubs.com/Japhilko82/WHCdata}
+
+\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
+HEAD
+\includegraphics{./tex2pdf.9796/01040098b8f6032936421c020a37ff8b059045d6.png}
+======= \includegraphics{../figure/WHCRpubs.PNG}
+\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}
+8437aa90df5912305d34be727d68e42bcfde9f7e
+
+\end{block}
+
+\begin{block}{Das Paket \texttt{magrittr}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://cran.r-project.org/web/packages/magrittr/index.html}{magrittr}
+  - für den Pipe Operator in R:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"magrittr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"magrittr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{./tex2pdf.9796/8ac87890df6a93266eed3c9d0aeb31b8524671e7.png}
+
+\end{block}
+
+\begin{block}{\href{https://www.r-bloggers.com/more-readable-code-with-pipes-in-r/}{Die
+Pipes nutzen}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(magrittr)}
+
+\NormalTok{str1 <-}\StringTok{ "Hallo Welt"}
+\NormalTok{str1 %>%}\StringTok{ }\KeywordTok{substr}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Hallo"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{str1 %>%}\StringTok{ }\KeywordTok{substr}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{) %>%}\StringTok{ }\KeywordTok{toupper}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "HALLO"
+\end{verbatim}
+
+\end{block}
+
+\begin{block}{Das Paket \texttt{leaflet}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://rstudio.github.io/leaflet/}{\texttt{leaflet}} - um
+  interaktive Karten mit der JavaScript Bibliothek \texttt{leaflet} zu
+  erzeugen
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"leaflet"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"leaflet"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  Bei \texttt{leaflet} wird mit so genannten Tiles gearbeitet.
+\item
+  Robin Lovelace -
+  \href{http://robinlovelace.net/r/2015/02/01/leaflet-r-package.html}{The
+  leaflet package for online mapping in R}
+\end{itemize}
+
+\end{block}
+
+\begin{block}{Was sind Tiles?}
+
+\begin{itemize}
+\tightlist
+\item
+  Die Übersetzung aus dem englischen ist Fliese und dieses Bild erklärt
+  es eigentlich ganz gut.
+\item
+  Es geht um
+  \href{https://de.wikipedia.org/wiki/Kachelgrafik}{Kachelgrafiken}.
+\item
+  Es ist eine Grafik bezeichnet, die mosaikartig zusammengesetzt ein
+  vielfach größeres Gesamtbild ergibt.
+\end{itemize}
+
+\end{block}
+
+\begin{block}{Eine interaktive Karte erstellen}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m <-}\StringTok{ }\KeywordTok{leaflet}\NormalTok{() %>%}
+\StringTok{  }\KeywordTok{addTiles}\NormalTok{() %>%}\StringTok{  }\CommentTok{# Add default OpenStreetMap map tiles}
+\StringTok{  }\KeywordTok{addMarkers}\NormalTok{(}\DataTypeTok{lng=}\NormalTok{whcSites$lon, }
+             \DataTypeTok{lat=}\NormalTok{whcSites$lat, }
+             \DataTypeTok{popup=}\NormalTok{whcSites$name_en)}
+\NormalTok{m}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{\href{https://rpubs.com/Japhilko82/WorldHeritageSites}{Die
+Karte zeigen}}
+
+\includegraphics{./tex2pdf.9796/5d9dbf801ab1bb41813925da4cff1a84779f8070.png}
+
+\end{block}
+
+\begin{block}{Farbe hinzu}
+
+\begin{itemize}
+\tightlist
+\item
+  die unterschiedlichen Kategorien farblich einfärben
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{whcSites$color <-}\StringTok{ "red"}
+\NormalTok{whcSites$color[whcSites$category==}\StringTok{"Cultural"}\NormalTok{] <-}\StringTok{ "blue"}
+\NormalTok{whcSites$color[whcSites$category==}\StringTok{"Mixed"}\NormalTok{] <-}\StringTok{ "orange"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{block}{Eine Karte mit Farbe erzeugen}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m1 <-}\StringTok{ }\KeywordTok{leaflet}\NormalTok{() %>%}
+\StringTok{  }\KeywordTok{addTiles}\NormalTok{() %>%}\StringTok{  }
+\StringTok{  }\KeywordTok{addCircles}\NormalTok{(}\DataTypeTok{lng=}\NormalTok{whcSites$lon, }
+             \DataTypeTok{lat=}\NormalTok{whcSites$lat, }
+             \DataTypeTok{popup=}\NormalTok{whcSites$name_en,}
+             \DataTypeTok{color=}\NormalTok{whcSites$color)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\end{block}
+
+\begin{block}{\href{https://rpubs.com/Japhilko82/CatWHS}{Die Karte mit
+mehr Farbe}}
+
+\includegraphics{./tex2pdf.9796/52e6f8e130c4763dce97b7ea03b9608f4cce6735.png}
+
+\end{block}
+
+\begin{block}{\href{http://www.r-bloggers.com/interactive-mapping-with-leaflet-in-r-2/}{Die
+Karte abspeichern}}
+
+\includegraphics{./tex2pdf.9796/6436c1937fa4caa8551cf7037ffe6e75a8a87194.png}
+
+\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
+HEAD \#\# \href{https://rstudio.github.io/leaflet/showhide.html}{Layers
+ein- und ausblenden}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m2 <-}\StringTok{ }\KeywordTok{leaflet}\NormalTok{() %>%}
+\StringTok{  }\KeywordTok{addTiles}\NormalTok{(}\DataTypeTok{group =} \StringTok{"OSM (default)"}\NormalTok{) %>%}\StringTok{  }
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"Stamen.Toner"}\NormalTok{, }\DataTypeTok{group =} \StringTok{"Toner"}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"Stamen.TonerLite"}\NormalTok{, }\DataTypeTok{group =} \StringTok{"Toner Lite"}\NormalTok{) %>%}
+
+\StringTok{  }\KeywordTok{addCircles}\NormalTok{(}\DataTypeTok{lng=}\NormalTok{whcSites$lon, }
+             \DataTypeTok{lat=}\NormalTok{whcSites$lat, }
+             \DataTypeTok{popup=}\NormalTok{whcSites$name_en) %>%}\StringTok{ }
+\StringTok{  }
+\StringTok{  }\KeywordTok{addLayersControl}\NormalTok{(}
+    \DataTypeTok{baseGroups =} \KeywordTok{c}\NormalTok{(}\StringTok{"OSM (default)"}\NormalTok{, }\StringTok{"Toner"}\NormalTok{, }\StringTok{"Toner Lite"}\NormalTok{),}
+    \DataTypeTok{options =} \KeywordTok{layersControlOptions}\NormalTok{(}\DataTypeTok{collapsed =} \OtherTok{FALSE}\NormalTok{)}
+  \NormalTok{)}
+\NormalTok{m2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{./tex2pdf.9796/d0d87c36714c088a0ea49e8dc94a92978feef5a7.png}
+
+\end{block}
+
+\begin{block}{\href{https://rstudio.github.io/leaflet/showhide.html}{Ein
+weiteres Beispiel mit Erdbebendaten}}
+
+\includegraphics{./tex2pdf.9796/1e0bb66d5996be9e18cf42ff8105ba02512af5cc.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{outline <-}\StringTok{ }\NormalTok{quakes[}\KeywordTok{chull}\NormalTok{(quakes$long, quakes$lat),]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{map <-}\StringTok{ }\KeywordTok{leaflet}\NormalTok{(quakes) %>%}
+\StringTok{  }\CommentTok{# Base groups}
+\StringTok{  }\KeywordTok{addTiles}\NormalTok{(}\DataTypeTok{group =} \StringTok{"OSM (default)"}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"Stamen.Toner"}\NormalTok{, }\DataTypeTok{group =} \StringTok{"Toner"}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"Stamen.TonerLite"}\NormalTok{, }\DataTypeTok{group =} \StringTok{"Toner Lite"}\NormalTok{) %>%}
+\StringTok{  }\CommentTok{# Overlay groups}
+\StringTok{  }\KeywordTok{addCircles}\NormalTok{(~long, ~lat, ~}\DecValTok{10}\NormalTok{^mag/}\DecValTok{5}\NormalTok{, }\DataTypeTok{stroke =} \NormalTok{F, }\DataTypeTok{group =} \StringTok{"Quakes"}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =} \NormalTok{outline, }\DataTypeTok{lng =} \NormalTok{~long, }\DataTypeTok{lat =} \NormalTok{~lat,}
+    \DataTypeTok{fill =} \NormalTok{F, }\DataTypeTok{weight =} \DecValTok{2}\NormalTok{, }\DataTypeTok{color =} \StringTok{"#FFFFCC"}\NormalTok{, }\DataTypeTok{group =} \StringTok{"Outline"}\NormalTok{) %>%}
+\StringTok{  }\CommentTok{# Layers control}
+\StringTok{  }\KeywordTok{addLayersControl}\NormalTok{(}
+    \DataTypeTok{baseGroups =} \KeywordTok{c}\NormalTok{(}\StringTok{"OSM (default)"}\NormalTok{, }\StringTok{"Toner"}\NormalTok{, }\StringTok{"Toner Lite"}\NormalTok{),}
+    \DataTypeTok{overlayGroups =} \KeywordTok{c}\NormalTok{(}\StringTok{"Quakes"}\NormalTok{, }\StringTok{"Outline"}\NormalTok{),}
+    \DataTypeTok{options =} \KeywordTok{layersControlOptions}\NormalTok{(}\DataTypeTok{collapsed =} \OtherTok{FALSE}\NormalTok{)}
+  \NormalTok{)}
+\NormalTok{map}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{\href{https://rstudio.github.io/leaflet/map_widget.html}{Karte
+mit Polygonen erzeugen}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(sp)}
+\NormalTok{Sr1 =}\StringTok{ }\KeywordTok{Polygon}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{)))}
+\NormalTok{Sr2 =}\StringTok{ }\KeywordTok{Polygon}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{)))}
+\NormalTok{Sr3 =}\StringTok{ }\KeywordTok{Polygon}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{4}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{)))}
+\NormalTok{Sr4 =}\StringTok{ }\KeywordTok{Polygon}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{)), }\DataTypeTok{hole =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{Srs1 =}\StringTok{ }\KeywordTok{Polygons}\NormalTok{(}\KeywordTok{list}\NormalTok{(Sr1), }\StringTok{"s1"}\NormalTok{)}
+\NormalTok{Srs2 =}\StringTok{ }\KeywordTok{Polygons}\NormalTok{(}\KeywordTok{list}\NormalTok{(Sr2), }\StringTok{"s2"}\NormalTok{)}
+\NormalTok{Srs3 =}\StringTok{ }\KeywordTok{Polygons}\NormalTok{(}\KeywordTok{list}\NormalTok{(Sr4, Sr3), }\StringTok{"s3/4"}\NormalTok{)}
+\NormalTok{SpP =}\StringTok{ }\KeywordTok{SpatialPolygons}\NormalTok{(}\KeywordTok{list}\NormalTok{(Srs1, Srs2, Srs3), }\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  so wird die Karte erzeugt:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{leaflet}\NormalTok{(}\DataTypeTok{height =} \StringTok{"300px"}\NormalTok{) %>%}\StringTok{ }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =} \NormalTok{SpP)}
+\end{Highlighting}
+\end{Shaded}
+
+=======
+\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}
+8437aa90df5912305d34be727d68e42bcfde9f7e
+
+\end{block}
+
+\begin{block}{Beispiel US Staaten}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(maps)}
+\NormalTok{mapStates =}\StringTok{ }\KeywordTok{map}\NormalTok{(}\StringTok{"state"}\NormalTok{, }\DataTypeTok{fill =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{leaflet}\NormalTok{(}\DataTypeTok{data =} \NormalTok{mapStates) %>%}\StringTok{ }\KeywordTok{addTiles}\NormalTok{() %>%}
+\StringTok{  }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{fillColor =} \KeywordTok{topo.colors}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DataTypeTok{alpha =} \OtherTok{NULL}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{Der Befehl \texttt{setView}}
+
+\begin{itemize}
+\item
+  mit \texttt{setView} kann man bestimmen welchen Ausschnitt man für die
+  Hintergrundkarte haben möchte
+\item
+  dazu muss man die latitude und Longitude Koordinaten und ein zoom
+  Level angegeben
+\item
+  dabei kann man nur ganze Zahlen angeben
+\item
+  je kleiner die Zahl, desto größer ist der Kartenausschnitt:
+\item
+  level 3 - Kontinent
+\item
+  level 10 - Stadt
+\item
+  level 21 - Gebäude
+\end{itemize}
+
+\end{block}
+
+\begin{block}{Die Basiskarte ändern}
+
+\begin{itemize}
+\tightlist
+\item
+  Neben der Default Basiskarte kann man auch
+  \href{http://leaflet-extras.github.io/leaflet-providers/preview/index.html}{andere
+  Hintergründe aktivieren}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m <-}\StringTok{ }\KeywordTok{leaflet}\NormalTok{() %>%}\StringTok{ }\KeywordTok{setView}\NormalTok{(}\DataTypeTok{lng =} \NormalTok{-}\FloatTok{71.0589}\NormalTok{, }\DataTypeTok{lat =} \FloatTok{42.3601}\NormalTok{, }\DataTypeTok{zoom =} \DecValTok{12}\NormalTok{)}
+\NormalTok{m %>%}\StringTok{ }\KeywordTok{addTiles}\NormalTok{()}
+\NormalTok{m %>%}\StringTok{ }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"Stamen.Toner"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{Basiskarte - CartoDB}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m %>%}\StringTok{ }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"CartoDB.Positron"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{Esri.NatGeoWorldMap}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m %>%}\StringTok{ }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"Esri.NatGeoWorldMap"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{OpenTopoMap}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m %>%}\StringTok{ }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"OpenTopoMap"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{Thunderforest.OpenCycleMap}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m %>%}\StringTok{ }\KeywordTok{addProviderTiles}\NormalTok{(}\StringTok{"Thunderforest.OpenCycleMap"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{Cluster Optionen für Marker}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{leaflet}\NormalTok{(quakes) %>%}\StringTok{ }\KeywordTok{addTiles}\NormalTok{() %>%}\StringTok{ }\KeywordTok{addMarkers}\NormalTok{(}
+  \DataTypeTok{clusterOptions =} \KeywordTok{markerClusterOptions}\NormalTok{()}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{\href{https://rstudio.github.io/leaflet/shapes.html}{Ein
+Rechteck hinzufügen}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{leaflet}\NormalTok{() %>%}\StringTok{ }\KeywordTok{addTiles}\NormalTok{() %>%}
+\StringTok{  }\KeywordTok{addRectangles}\NormalTok{(}
+    \DataTypeTok{lng1=}\NormalTok{-}\FloatTok{118.456554}\NormalTok{, }\DataTypeTok{lat1=}\FloatTok{34.078039}\NormalTok{,}
+    \DataTypeTok{lng2=}\NormalTok{-}\FloatTok{118.436383}\NormalTok{, }\DataTypeTok{lat2=}\FloatTok{34.062717}\NormalTok{,}
+    \DataTypeTok{fillColor =} \StringTok{"transparent"}
+  \NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{block}
+
+\begin{block}{Links und Quellen}
+
+\begin{itemize}
+\item
+  \href{https://www.r-bloggers.com/4-tricks-for-working-with-r-leaflet-and-shiny/}{4
+  Tricks zum Arbeiten mit Leaflet}
+\item
+  \url{http://www.r-bloggers.com/the-leaflet-package-for-online-mapping-in-r/}
+\item
+  \url{https://rstudio.github.io/leaflet/}
+\end{itemize}
+
+\end{block}
+
+\begin{block}{Aufgabe \texttt{leaflet}}
+
+\begin{itemize}
+\tightlist
+\item
+  Verwenden Sie die Adresse, die Sie zuvor geokodiert haben, um eine
+  interaktive Karte um diesen Punkt herum zu erstellen.
+\end{itemize}
+
+\end{block}
+

@@ -9,6 +9,7 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 ## Notebooks
 
 - [Warum R Notebook nutzen](https://news.ycombinator.com/item?id=12683625)
@@ -69,6 +70,10 @@ print(sys.version)
 jupyter notebook
 ```
 ## Start Jupyter Notebook
+
+### Jupyter Notebook im Intranet
+
+<http://intranet.gesis.intra/AGs/iedi/Seiten/Jupyter.aspx>
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/JupyterEx.PNG)
 

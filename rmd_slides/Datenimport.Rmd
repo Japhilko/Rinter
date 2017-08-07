@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE,message=F,warning=F)
 ```
 
 
+
 ## Datenimport
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Datenimport.PNG)
@@ -121,6 +122,10 @@ oecd <- read_stata("https://github.com/Japhilko/IntroR/blob/master/2017/data/oec
 
 ## Das Paket `readr`
 
+
+### Das Paket [`readr` (Rstudio Blogg)](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
+
+
 ```{r,eval=F}
 install.packages("readr")
 ```
@@ -128,9 +133,6 @@ install.packages("readr")
 ```{r}
 library(readr)
 ```
-
-- [`readr` auf dem Rstudio Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
-
 
 
 ## Import von Excel-Daten
@@ -207,6 +209,7 @@ oecd <- read_dta("https://github.com/Japhilko/IntroR/
 
 ## Das Paket `readstata13`
 
+### *Import 'Stata' Data Files*
 
 ```{r,eval=F}
 # install.packages("readstata13")
@@ -264,6 +267,42 @@ library(Rcmdr)
 - [Gesis Panel Campus File](http://www.gesis.org/gesis-panel/data/gesis-panel-campus-file/)
 
 - [Codebuch für die Gesis Panel Daten im DBK](https://dbk.gesis.org/dbksearch/SDesc2.asp?ll=10&notabs=&af=&nf=&search=gesis%20panel&search2=&db=D&no=5665)
+
+
+## Gesis Panel Daten einlesen
+
+```{r,echo=F,eval=F}
+pufpath <- "J:/Work/GESISPanel_DATA/01_post_processing/campus_file/b_2014"
+pufpath2 <- "J:/Work/Statistik/Kolb/Workshops/2017/Rintern/data"
+setwd(pufpath2)
+```
+
+```{r,eval=F}
+library(readstata13)
+dat <- read.dta13("ZA5666_v1-0-0_Stata14.dta")
+attdat <- attributes(dat)
+varlabs <- data.frame(colnames(dat),attdat$var.labels)
+attdat$var.labels
+```
+
+```{r,echo=F,eval=F}
+setwd("D:/Daten/GitHub/Rinter/data")
+save(varlabs,file="GP_varlabs.RData")
+```
+
+```{r,echo=F}
+load("../data/GP_varlabs.RData")
+head(as.character(varlabs[,2]),n=20)
+```
+
+
+## Gesis Panel - Variablen Labels
+
+```{r,echo=F}
+library(knitr)
+load("../data/GP_varlabs.RData")
+kable(head(varlabs),n=10)
+```
 
 
 ## Aufgabe

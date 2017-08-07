@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.34pt}
+\beamer@sectionintoc {1}{Eine ioslides Pr\IeC {\"a}sentation}{390}{0}{1}
+\beamer@sectionintoc {2}{Eine slidy Pr\IeC {\"a}sentation}{397}{0}{2}
+\beamer@sectionintoc {3}{HTML Dokumente}{402}{0}{3}
+\beamer@sectionintoc {4}{Dashboards}{408}{0}{4}
+\beamer@sectionintoc {5}{Rnotebooks}{417}{0}{5}
+\beamer@sectionintoc {6}{Andere Notebooks}{424}{0}{6}
+\beamer@sectionintoc {7}{Beaker Notebook}{428}{0}{7}

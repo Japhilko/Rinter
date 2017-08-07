@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE,warning=F,message=F,eval=T)
 ```
 
 
-## Die lineare Regression
+## Literatur - lineare Regression
 
 Maindonald - [Data Analysis](https://cran.r-project.org/doc/contrib/usingR.pdf)
 

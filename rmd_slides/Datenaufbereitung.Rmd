@@ -6,14 +6,12 @@ output: beamer_presentation
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,eval=T)
+knitr::opts_chunk$set(echo = TRUE,eval=T,warning=F,message=F)
 ```
-
-
 
 ## Data Frames
 
-Beispieldaten einlesen:
+### Beispieldaten einlesen:
 
 ```{r,echo=F}
 library(foreign)
@@ -25,6 +23,9 @@ library(foreign)
 dat<-read.dta("https://github.com/Japhilko/RSocialScience/
               raw/master/data/GPanel.dta")
 ```
+
+- Auf dem Github Verzeichnis liegt eine verkleinerte Version des Campus Files. 
+- Alle Operationen sollten aber auch mit dem größeren Datensatz funktionieren
 
 ## Übersicht mittels Rstudio
 
@@ -302,15 +303,53 @@ gpanel1 <- as_tibble(dat)
 gpanel1
 ```
 
-## Schleifen
+## [In R verfügbare Schleifen](https://www.datacamp.com/community/tutorials/tutorial-on-loops-in-r#gs.e=BY75k)
+
+![](http://community.datacamp.com.s3.amazonaws.com/community/production/ckeditor_assets/pictures/132/content_flowchart1.png)
+
+
+## Beispiele für [Schleifen](https://www.r-bloggers.com/how-to-write-the-first-for-loop-in-r/)
+
+### Beispiel Jahreszahlen plotten
+
+```{r,eval=F}
+for (year in c(2010,2011,2012,2013,2014,2015)){
+  print(paste("The year is", year))
+}
+```
+
+### Beispiel: Ergebnisse der Schleife in Container speichern
 
 ```{r}
 erg <- vector()
 
 for (i in 1:ncol(dat)){
-  erg[i] <- length(table(dat[,i]))  
+  erg[i] <- mean(runif(100))
 }
 ```
+
+
+## [Beispiele für Funktionen](http://r4ds.had.co.nz/functions.html)
+
+### Beispiel fehlende Werte
+
+```{r}
+a <- c(1,2,45,NA)
+mean(a)
+```
+
+### Eine Funktion, die auch bei NA's Wert ausgibt:
+```{r}
+namean <- function(x) {
+  rng <- mean(x, na.rm = TRUE)
+}
+```
+
+```{r}
+namean(a)
+```
+
+
 
 ## [Fehlende Werte ausschließen](http://faculty.nps.edu/sebuttre/home/R/missings.html)
 

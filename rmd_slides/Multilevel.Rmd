@@ -9,6 +9,7 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 ## Wie sehen die Daten aus?
 
 - Beispiel Mehrebenenstruktur der Daten
@@ -247,10 +248,13 @@ summary(HLM1)
 
 ## Ein weiteres Beispiel zur [Spezifikation von Multilevel Modellen](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
 
-- benötigte Bibliotheken:
+### benötigte Bibliotheken:
 
 ```{r}
+# Linear Mixed-Effects Models
 library(lme4)
+
+# Examples from Multilevel Modelling Software Review
 library(mlmRev)
 ```
 

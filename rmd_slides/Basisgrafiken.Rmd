@@ -9,6 +9,7 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE,warning=F)
 ```
 
+
 ## Ein Plot sagt mehr als 1000 Worte
 
 -  Grafisch gestützte Datenanalyse ist toll
@@ -23,9 +24,11 @@ knitr::opts_chunk$set(echo = TRUE,warning=F)
 ## Plot ist nicht gleich Plot
 
 -  Bereits das base Package bringt eine große Menge von Plot Funktionen mit
--  Das lattice Packet erweitert dessen Funktionalität
--  Eine weit über diese Einführung hinausgehende Übersicht findet sich in Murrell, P (2006): R Graphics.
+-  Die Pakete `lattice` und ggplot2 erweitern die Funktionalität
+-  Eine weit über diese Einführung hinausgehende Übersicht findet sich in Murrell, P (2. Ausgabe 2012): R Graphics.
 
+
+![](../figure/PaulMurrel.jpg)
 ##  Task View zu Thema [Graphiken](https://cran.r-project.org/web/views/Graphics.html)
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/TaskViewGraphics.PNG)
@@ -50,9 +53,9 @@ data(Chem97)
 
 ## Histogramm - Die Funktion hist()
 
-Wir erstellen ein Histogramm der Variable gcsescore:
+Wir erstellen ein Histogramm der Variable gcsescore (Hilfe mit `?hist`):
 
-```{r,eval=F}
+```{r,eval=F,echo=F}
 ?hist
 ```
 
@@ -162,9 +165,13 @@ barplot(tabScore,col=rgb(1,0,0,.3))
 
 ## Beispieldaten für Scatterplot
 
+
+### Gleichverteilte Zufallsvariablen
 ```{r}
 x <- runif(100)
+head(x)
 y <- runif(100)
+head(y)
 ```
 
 ## Einfacher Scatterplot
@@ -182,7 +189,7 @@ plot(x,y,pch=20)
 ## Einfacher Scatterplot III
 
 ```{r}
-plot(x,y,pch=20)
+plot(x,y,pch=15)
 ```
 
 
@@ -198,8 +205,7 @@ plot(x,y,pch=20)
 ## Horizontaler Boxplot
 
 ```{r}
-boxplot(Chem97$gcsescore,
-horizontal=TRUE)
+boxplot(Chem97$gcsescore,horizontal=TRUE)
 ```
 
 - [Erklärung zu Boxplots](http://edoc.hu-berlin.de/dissertationen/gruenwald-andreas-2005-01-17/HTML/chapter2.html)
@@ -219,7 +225,7 @@ boxplot(Chem97$gcsescore~Chem97$gender)
 
 ## Alternativen zu Boxplot
 
-Violinplot 
+### Violinplot 
 
 -  Baut auf Boxplot auf 
 -  Zusätzlich Informationen über Dichte der Daten 
@@ -237,9 +243,15 @@ y <- rnorm(100)
 
 ```{r,message=F,eval=F}
 library(vioplot)
+
+# Scatterplot wird erzeugt
 plot(x, y, xlim=c(-5,5), ylim=c(-5,5))
+
+# Vioplot wird entlang der y-Achse geplottet
 vioplot(x, col="tomato", horizontal=TRUE, at=-4, 
         add=TRUE,lty=2, rectCol="gray")
+
+# Vioplot wird entlang der x-Achse geplottet
 vioplot(y, col="cyan", horizontal=FALSE, at=-4, 
         add=TRUE,lty=2)
 ```
@@ -273,6 +285,9 @@ pie(1:10, col=1:10)
 dev.off() 
 ```
 
+```{r,echo=F}
+pie(1:10, col=1:10)
+```
 
 
 ## Aufgabe - einfache Grafiken

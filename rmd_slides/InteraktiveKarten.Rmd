@@ -9,6 +9,7 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 ## Die Daten - Weltkulturerbe
 
 - die Daten einlesen:
@@ -61,11 +62,7 @@ datatable(whcSitesDat2)
 
 <http://rpubs.com/Japhilko82/WHCdata>
 
-<<<<<<< HEAD
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WHCRpubs.PNG)
-=======
-![](../figure/WHCRpubs.PNG)
->>>>>>> 8437aa90df5912305d34be727d68e42bcfde9f7e
 
 
 ## Das Paket `magrittr`
@@ -222,7 +219,7 @@ map
 ```
 
 
-
+<!--
 ## [Karte mit Polygonen erzeugen](https://rstudio.github.io/leaflet/map_widget.html)
 
 ```{r}
@@ -243,8 +240,7 @@ SpP = SpatialPolygons(list(Srs1, Srs2, Srs3), 1:3)
 leaflet(height = "300px") %>% addPolygons(data = SpP)
 ```
 
-=======
->>>>>>> 8437aa90df5912305d34be727d68e42bcfde9f7e
+-->
 
 ## Beispiel US Staaten
 
@@ -338,3 +334,7 @@ leaflet() %>% addTiles() %>%
 
 - Verwenden Sie die Adresse, die Sie zuvor geokodiert haben, um eine interaktive Karte um diesen Punkt herum zu erstellen.
 
+## Schlussfolie
+
+
+### Vielen Dank für die Aufmerksamkeit 
