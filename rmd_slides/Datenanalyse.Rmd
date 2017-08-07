@@ -187,7 +187,7 @@ apply(ApplyDat,1,length)
 
 
 ```{r}
-tapdat <- cbind(SEX=sample(c("m","w"),10,replace=T),INC=rnorm(10))
+tapdat <- data.frame(SEX=sample(c("m","w"),10,replace=T),INC=rnorm(10))
 ```
 
 ```{r,echo=F}
